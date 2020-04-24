@@ -1,0 +1,69 @@
+import React, { Component } from "react"
+import mq from "../../../styling/media-queries"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { SocialMediaLinks } from "../../social-media-links"
+import { colors } from "../../../styling/colors"
+
+type MobileNavbarState = {
+  navbarActivated: boolean
+}
+
+class MobileNavbar extends Component<{}, MobileNavbarState> {
+  constructor(props: {}) {
+    super(props)
+    this.state = {
+      navbarActivated: false,
+    }
+  }
+
+  navToggle = () => {
+    if (this.state.navbarActivated) {
+      document.getElementById("nav-tabs").style.top = "-33vh"
+    } else {
+      document.getElementById("nav-tabs").style.top = "7.5vh"
+    }
+    this.setState({ navbarActivated: !this.state.navbarActivated })
+  }
+
+  render() {
+    return (
+      <div
+        css={mq({
+          display: ["flex", "none"],
+          color: "white",
+          paddingRight: "1rem",
+          paddingBottom: ".5rem",
+          background: "rgb(0,0,0)",
+          zIndex: 100,
+        })}
+      >
+        <SocialMediaLinks
+          styling={mq({
+            display: "flex",
+            width: "100%",
+            justifyContent: "initial",
+            marginRight: ["0", "2em"],
+            paddingLeft: "1rem",
+            marginTop: "1.1rem",
+            fontSize: "1.25rem",
+            zIndex: 100,
+          })}
+          textColor={colors.navbarText}
+        />
+        <FontAwesomeIcon
+          css={{
+            color: colors.navbarText,
+            fontSize: "1.5rem",
+            marginTop: "1rem",
+            cursor: "pointer",
+            zIndex: 100,
+          }}
+          icon={"align-right"}
+          onClick={() => this.navToggle()}
+        />
+      </div>
+    )
+  }
+}
+
+export default MobileNavbar

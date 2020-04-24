@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "esnext",
+    "jsx": "react",
+    "lib": ["dom", "esnext"],
+    "baseUrl": "./",
+    "paths": {
+      "src/*": ["src/*"]
+    },
+    "types": ["node", "@emotion/core", "@types/jest"]
+  },
+  "include": ["./src/**/*", "./build/**/*", "./test/**/*/", "./shared/**/*"]
+}
