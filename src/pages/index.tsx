@@ -7,7 +7,10 @@ import { PageTitle } from "../components/common/page-title"
 const IndexPage: React.FC<any> = () => (
   <Layout>
     <SEO title="Home" />
-    <PageTitle />
+    <PageTitle
+      pageTitle="BAMBINA KATARINA"
+      pageDescription="Welcome to my Blog"
+    />
   </Layout>
 )
 

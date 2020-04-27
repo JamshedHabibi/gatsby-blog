@@ -12,8 +12,8 @@ export const Footer: React.FC<FooterProps> = () => {
           display: "flex",
           justifyContent: "center",
           background: colors.footerBackground,
-          paddingTop: "8vh",
-          paddingBottom: "8vh",
+          paddingTop: "5vh",
+          paddingBottom: "9vh",
           width: "100vw",
           color: colors.footerText,
           position: "absolute",
@@ -31,7 +31,7 @@ export const Footer: React.FC<FooterProps> = () => {
             width: "100%",
             justifyContent: "center",
             position: "absolute",
-            bottom: ["2vh", "4vh"],
+            bottom: [".75rem", "1.75rem"],
           })}
           textColor={colors.footerSocialMediaLinks}
         />
