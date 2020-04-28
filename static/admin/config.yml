@@ -18,8 +18,44 @@ site_url: https://bambinakatarina.netlify.app/
 #Collections define the structure for the different content types on your static site.
 collections:
   - name: travel # Used in routes, e.g., /admin/collections/blog
-    label: Blog # Used in the UI
+    label: Travel # Used in the UI
     folder: blog/travel # The path to the folder where the documents are stored
+    extension: json
+    format: json
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { name: title, label: Title, widget: string }
+      - {
+          name: date,
+          label: Date,
+          dateFormat: "DD/MM/YYYY",
+          timeFormat: HH:mm,
+          widget: datetime,
+        }
+      - { name: body, label: Body, widget: markdown }
+
+  - name: style # Used in routes, e.g., /admin/collections/blog
+    label: Style # Used in the UI
+    folder: blog/style # The path to the folder where the documents are stored
+    extension: json
+    format: json
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { name: title, label: Title, widget: string }
+      - {
+          name: date,
+          label: Date,
+          dateFormat: "DD/MM/YYYY",
+          timeFormat: HH:mm,
+          widget: datetime,
+        }
+      - { name: body, label: Body, widget: markdown }
+
+  - name: bookish # Used in routes, e.g., /admin/collections/blog
+    label: Bookish # Used in the UI
+    folder: blog/bookish # The path to the folder where the documents are stored
     extension: json
     format: json
     create: true # Allow users to create new documents in this collection
