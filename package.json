@@ -29,6 +29,7 @@
     "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-sharp": "^2.4.3",
+    "netlify-cms": "^2.10.47",
     "netlify-cms-app": "^2.12.11",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
