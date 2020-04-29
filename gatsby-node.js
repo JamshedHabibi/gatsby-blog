@@ -1,4 +1,4 @@
-exports.createPages = ({ actions: { createPage } }) => {
+/*exports.createPages = ({ actions: { createPage } }) => {
   const travelBlogPosts = require(`./data/blog/travel`)
   travelBlogPosts.forEach(post => {
     createPage({
@@ -11,3 +11,4 @@ exports.createPages = ({ actions: { createPage } }) => {
     })
   })
 }
+*/
