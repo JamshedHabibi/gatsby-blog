@@ -1,30 +1,40 @@
 backend:
-  name: git-gateway #open source API that acts as a proxy between authenticated users of the site and the site repo
-  branch: master #defaults to master if not included
-#changes made in Netlify CMS, matches content in the repo on the master branch.
+  name: git-gateway
+  branch: master
 
-#Works by pointing CMS to folder which holds media, i.e. images/uploads.
-
-#specifies where uploaded files are saved in the repo
 media_folder: static/images
-
-#indicates where they are found in the published site.
-#image src attribute uses this path, which is relative to the file where its called. For this reason, we usually start the path at site root, using the opening '/'.
-#if public_folder is not set, netlify CMS defaults to the same value as media_folder, adding an opening '/' if one is not included.
 public_folder: /images
 
 site_url: https://bambinakatarina.netlify.app/
 
-#Collections define the structure for the different content types on your static site.
 collections:
-  - name: travel # Used in routes, e.g., /admin/collections/blog
-    label: Travel # Used in the UI
-    folder: blog/travel # The path to the folder where the documents are stored
+  - name: travel
+    label: Travel
+    folder: blog/travel
     extension: json
     format: json
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - {
+          name: date,
+          label: Date,
+          dateFormat: "DD/MM/YYYY",
+          timeFormat: HH:mm,
+          widget: datetime,
+        }
+      - { name: image, label: Image, widget: image }
+      - { name: body, label: Body, widget: markdown }
+
+  - name: style
+    label: Style
+    folder: blog/style
+    extension: json
+    format: json
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields:
       - { name: title, label: Title, widget: string }
       - {
           name: date,
@@ -35,32 +45,14 @@ collections:
         }
       - { name: body, label: Body, widget: markdown }
 
-  - name: style # Used in routes, e.g., /admin/collections/blog
-    label: Style # Used in the UI
-    folder: blog/style # The path to the folder where the documents are stored
+  - name: bookish
+    label: Bookish
+    folder: blog/bookish
     extension: json
     format: json
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - { name: title, label: Title, widget: string }
-      - {
-          name: date,
-          label: Date,
-          dateFormat: "DD/MM/YYYY",
-          timeFormat: HH:mm,
-          widget: datetime,
-        }
-      - { name: body, label: Body, widget: markdown }
-
-  - name: bookish # Used in routes, e.g., /admin/collections/blog
-    label: Bookish # Used in the UI
-    folder: blog/bookish # The path to the folder where the documents are stored
-    extension: json
-    format: json
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields:
       - { name: title, label: Title, widget: string }
       - {
           name: date,
