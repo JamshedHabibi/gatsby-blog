@@ -9,16 +9,18 @@ site_url: https://bambinakatarina.netlify.app/
 
 collections:
   # Pages
-  - name: landing
-    label: Landing Page
+  - name: pages
+    label: Pages
     files:
+      # Landing Page
       - name: "landing"
         label: "Landing Page"
         file: "data/landing.json"
         fields:
           - name: hero
             label: Hero
-            widget: list
+            widget: object
+            collapsed: true
             fields:
               - { name: image, label: Image, widget: image }
               - { name: alternateText, label: Alternate text, widget: string }
