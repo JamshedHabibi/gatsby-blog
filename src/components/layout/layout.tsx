@@ -14,7 +14,7 @@ import getFontAwesomeIcons from "../../styling/font-awesome"
 import { Footer } from "./footer"
 
 const Layout = ({ children }: any) => {
-  const data = useStaticQuery(graphql`
+  const data = graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -22,7 +22,8 @@ const Layout = ({ children }: any) => {
         }
       }
     }
-  `)
+  `
+
   getFontAwesomeIcons()
   return (
     <div>
@@ -33,10 +34,6 @@ const Layout = ({ children }: any) => {
       <Footer />
     </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

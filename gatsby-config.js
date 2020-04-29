@@ -12,8 +12,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `blogs`,
-        path: `${__dirname}/blog`,
+        path: `${__dirname}/data`,
       },
     },
     {
@@ -22,6 +21,7 @@ module.exports = {
         path: `${__dirname}/src/fonts`,
       },
     },
+    `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
