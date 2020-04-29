@@ -11,7 +11,7 @@ collections:
   # Home Page
   - name: landing
     label: Landing Page
-    file: "data/landing.json"
+    files: "data/landing.json"
     extension: json
     format: json
     create: false
