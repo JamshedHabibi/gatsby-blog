@@ -1,1 +1,9 @@
-{}
+{
+  "hero": {
+    "image": {
+      "imagePath": "/images/img_1074.jpg",
+      "alternateText": "cp fc"
+    },
+    "title": "Bambina Katarina"
+  }
+}
