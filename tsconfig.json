@@ -6,7 +6,7 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "target": "esnext",
-    "jsx": "preserve",
+    "jsx": "react",
     "lib": ["dom", "esnext"],
     "baseUrl": "./",
     "paths": {
