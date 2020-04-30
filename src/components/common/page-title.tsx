@@ -3,7 +3,7 @@ import mq from "../../styling/media-queries"
 
 type PageTitleProps = {
   pageTitle: string
-  pageDescription: string
+  pageDescription?: string
 }
 
 export const PageTitle: React.FC<PageTitleProps> = ({

@@ -14,16 +14,6 @@ import getFontAwesomeIcons from "../../styling/font-awesome"
 import { Footer } from "./footer"
 
 const Layout = ({ children }: any) => {
-  const data = graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `
-
   getFontAwesomeIcons()
   return (
     <div>
