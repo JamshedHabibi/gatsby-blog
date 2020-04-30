@@ -33,6 +33,11 @@ collections:
                       widget: string,
                     }
               - { name: pageTitle, label: Page Title, widget: string }
+              - {
+                  name: pageDescription,
+                  label: Page Description,
+                  widget: string,
+                }
 
   # Blog Post Sections
   # TRAVEL

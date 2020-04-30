@@ -11,7 +11,10 @@ const IndexPage: React.FC<any> = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <PageTitle pageTitle={heroContent.pageTitle} />
+      <PageTitle
+        pageTitle={heroContent.pageTitle}
+        pageDescription={heroContent.pageDescription}
+      />
     </Layout>
   )
 }

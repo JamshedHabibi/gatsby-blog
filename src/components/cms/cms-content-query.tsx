@@ -13,6 +13,7 @@ export const useCmsContentQuery = () => {
                 imagePath
               }
               pageTitle
+              pageDescription
             }
           }
         }
