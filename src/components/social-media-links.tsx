@@ -7,12 +7,14 @@ type SocialMediaLinksProps = {
   styling: {}
   textColor?: string
   highlightColor?: string
+  padding: string | string[]
 }
 
 export const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
   styling,
   textColor,
   highlightColor,
+  padding,
 }) => {
   return (
     <div css={styling}>
@@ -21,12 +23,14 @@ export const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
         displayIcon={["fab", "twitter"]}
         color={textColor}
         highlightColor={highlightColor}
+        padding={padding}
       />
       <NavTabSocials
         path="https://www.instagram.com/bambinakatarina/"
         displayIcon={["fab", "instagram"]}
         color={textColor}
         highlightColor={highlightColor}
+        padding={padding}
       />
 
       <NavTabSocials
@@ -34,6 +38,7 @@ export const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
         displayIcon={["fab", "youtube"]}
         color={textColor}
         highlightColor={highlightColor}
+        padding={padding}
       />
     </div>
   )
@@ -44,6 +49,7 @@ type NavTabSocialsProps = {
   displayIcon: IconProp
   color?: string
   highlightColor?: string
+  padding: string | string[]
 }
 
 const NavTabSocials: React.FC<NavTabSocialsProps> = ({
@@ -51,20 +57,21 @@ const NavTabSocials: React.FC<NavTabSocialsProps> = ({
   displayIcon,
   color,
   highlightColor,
+  padding,
 }) => {
   return (
     <div css={mq({ paddingBottom: [".75rem", "0"] })}>
       <a
         href={path}
         target="_blank"
-        css={{
+        css={mq({
           color: color,
-          paddingRight: "1em",
+          paddingRight: padding,
           transition: "all 0.2s ease-in-out",
           "&:hover": {
             color: highlightColor,
           },
-        }}
+        })}
       >
         <FontAwesomeIcon icon={displayIcon} />
       </a>

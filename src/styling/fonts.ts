@@ -5,4 +5,8 @@ export const fonts = {
     fontFamily: "'Baloo Bhaina 2', cursive",
     fontWeight: 400,
   },
+  headerUserName: {
+    fontFamily: "'Amiri', serif",
+    fontWeight: 400,
+  },
 }

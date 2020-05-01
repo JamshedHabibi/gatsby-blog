@@ -14,8 +14,32 @@ const IndexPage: React.FC<any> = () => {
       <PageTitle
         pageTitle={heroContent.pageTitle}
         pageDescription={heroContent.pageDescription}
+        image={heroContent.image}
       />
+      <IndexPageContent />
     </Layout>
+  )
+}
+
+const IndexPageContent: React.FC<any> = () => {
+  return (
+    <div>
+      <h1
+        css={{
+          display: "flex",
+          justifyContent: "center",
+          color: "black",
+          position: "relative",
+        }}
+      >
+        Latest Posts
+      </h1>
+      <div>Hello World</div>
+      <div>Hello World</div>
+      <div>Hello World</div>
+      <div>Hello World</div>
+      <div>Hello World</div>
+    </div>
   )
 }
 export default IndexPage

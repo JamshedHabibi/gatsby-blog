@@ -2,12 +2,9 @@ import React from "react"
 import { NavTabLayout } from "./nav-tabs-layout"
 import DesktopNav from "./desktop-nav"
 import { MobileNav } from "./mobile-nav"
+import { Header } from "../header"
 
-type NavbarProps = {
-  siteTitle?: string
-}
-
-const Navbar = ({}: NavbarProps) => {
+const Navbar = ({}: any) => {
   return (
     <>
       <DesktopNav>

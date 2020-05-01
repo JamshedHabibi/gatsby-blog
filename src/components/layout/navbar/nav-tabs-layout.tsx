@@ -2,34 +2,49 @@ import React from "react"
 import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import mq from "../../../styling/media-queries"
-import { SocialMediaLinks } from "../../social-media-links"
 import { colors } from "../../../styling/colors"
 import { fonts } from "../../../styling/fonts"
-
-type NavTabProps = {
-  path: string
-  displayText: string
-}
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { flex } from "../../../styling/constants"
 
 const navTabStyle = css([
   fonts.navbar,
-  mq({
+  {
     color: colors.navbarText,
-    fontSize: ".94rem",
+    fontSize: ".85rem",
     textDecoration: "none",
-    marginRight: ["0", "2rem", "3rem"],
     transition: "all 0.2s ease-in-out",
     "&:hover": {
       color: colors.highlightNavbarText,
     },
-  }),
+  },
 ])
 
-const NavTab: React.FC<NavTabProps> = ({ path, displayText }) => {
+type NavTabProps = {
+  path: string
+  displayText: string
+  showArrow?: boolean
+}
+
+const NavTab: React.FC<NavTabProps> = ({ path, displayText, showArrow }) => {
   return (
-    <div css={mq({ paddingBottom: [".5rem", "0"] })}>
+    <div
+      css={mq({
+        padding: ".5rem",
+      })}
+    >
       <Link css={navTabStyle} to={path}>
         {displayText.toUpperCase()}
+        {showArrow ? (
+          <FontAwesomeIcon
+            css={{
+              fontSize: "0.6rem",
+              paddingLeft: ".4rem",
+              paddingBottom: ".05rem",
+            }}
+            icon={"chevron-down"}
+          />
+        ) : null}
       </Link>
     </div>
   )
@@ -37,22 +52,26 @@ const NavTab: React.FC<NavTabProps> = ({ path, displayText }) => {
 
 export const NavTabLayout: React.FC<any> = () => {
   return (
-    <>
-      <NavTab path="/" displayText="Home" />
-      <NavTab path="/about" displayText="About" />
-      <NavTab path="/categories" displayText="Categories" />
-      <NavTab path="/archive" displayText="Archive" />
-      <SocialMediaLinks
-        styling={mq({
-          display: ["none", "flex"],
+    <div
+      css={[
+        flex.rowCentered,
+        {
           width: "100%",
-          justifyContent: [null, "flex-end"],
-          marginRight: ["0", "2rem"],
-          paddingTop: ".325rem",
+        },
+      ]}
+    >
+      <div
+        css={mq({
+          display: "flex",
+          justifyContent: "space-around",
+          width: ["90%", "80%", "40%"],
         })}
-        textColor={colors.navbarText}
-        highlightColor={colors.highlightNavbarText}
-      />
-    </>
+      >
+        <NavTab path="/" displayText="Home" />
+        <NavTab path="/about" displayText="About" />
+        <NavTab path="/categories" displayText="Categories" showArrow />
+        <NavTab path="/archive" displayText="Archive" showArrow />
+      </div>
+    </div>
   )
 }

@@ -18,7 +18,7 @@ class MobileNavbar extends Component<{}, MobileNavbarState> {
 
   navToggle = () => {
     if (this.state.navbarActivated) {
-      document.getElementById("nav-tabs").style.top = "-33vh"
+      document.getElementById("nav-tabs").style.top = "-10vh"
     } else {
       document.getElementById("nav-tabs").style.top = "7.5vh"
     }
@@ -33,7 +33,7 @@ class MobileNavbar extends Component<{}, MobileNavbarState> {
           color: "white",
           paddingRight: "1rem",
           paddingBottom: ".5rem",
-          background: "rgb(0,0,0)",
+          background: colors.navbarBackground,
           zIndex: 100,
         })}
       >
@@ -49,6 +49,7 @@ class MobileNavbar extends Component<{}, MobileNavbarState> {
             zIndex: 100,
           })}
           textColor={colors.navbarText}
+          padding="1em"
         />
         <FontAwesomeIcon
           css={{
@@ -58,7 +59,7 @@ class MobileNavbar extends Component<{}, MobileNavbarState> {
             cursor: "pointer",
             zIndex: 100,
           }}
-          icon={"align-right"}
+          icon={this.state.navbarActivated ? "times" : "align-right"}
           onClick={() => this.navToggle()}
         />
       </div>

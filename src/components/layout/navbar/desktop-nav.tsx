@@ -1,5 +1,7 @@
 import React from "react"
 import mq from "../../../styling/media-queries"
+import { colors } from "../../../styling/colors"
+import { zIndex, flex } from "../../../styling/constants"
 
 const DesktopNav: React.FC<any> = ({ children }) => {
   return (
@@ -7,11 +9,11 @@ const DesktopNav: React.FC<any> = ({ children }) => {
       css={mq({
         display: ["none", "flex"],
         width: "100%",
+        height: "8%",
         position: "fixed",
-        padding: ".5rem 1rem .5rem 1rem",
         top: "0vh",
-        background: "rgb(0,0,0,0.9)",
-        zIndex: 99,
+        zIndex: zIndex.layout,
+        background: colors.navbarBackground,
       })}
     >
       {children}

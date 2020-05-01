@@ -1,29 +1,35 @@
 import React from "react"
 import mq from "../../styling/media-queries"
 
+type HeroImage = {
+  imagePath: string
+  alternateText: string
+}
 type PageTitleProps = {
   pageTitle: string
   pageDescription?: string
+  image: HeroImage
 }
 
 export const PageTitle: React.FC<PageTitleProps> = ({
   pageTitle,
   pageDescription,
+  image,
 }) => {
   return (
     <div>
-      <img
-        src="https://www.jamesbellphotography.co.uk/blog/wp-content/uploads/2019/04/B0005491.jpg"
-        alt="hero"
-        css={mq({
-          width: "100vw",
-          height: "80vh",
-          position: "absolute",
-          top: ["-5vh", "1vh"],
-          filter: "brightness(70%)",
-        })}
-      />
-      <div css={{ position: "relative", top: "28vh" }}>
+      <div css={{ position: "relative", top: "60vh" }}>
+        <img
+          src={image.imagePath}
+          alt={image.alternateText}
+          css={mq({
+            width: "100%",
+            height: ["92vh", "30rem"],
+            filter: "brightness(70%)",
+          })}
+        />
+      </div>
+      <div css={{ position: "relative", top: "-40vh" }}>
         <div
           css={mq({
             color: "white",
