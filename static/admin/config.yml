@@ -11,7 +11,7 @@ collections:
   # Landing Page
   - name: "landing"
     label: "Landing Page"
-    file: "data/landing.json"
+    files: "data/landing.json"
     fields:
       - name: hero
         label: Hero
