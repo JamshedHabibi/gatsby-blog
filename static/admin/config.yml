@@ -8,28 +8,35 @@ public_folder: /images
 site_url: https://bambinakatarina.netlify.app/
 
 collections:
-  # Landing Page
-  - name: "landing"
-    label: "Landing Page"
-    files: "data/landing.json"
-    fields:
-      - name: hero
-        label: Hero
-        widget: object
-        collapsed: true
+  - name: "pages"
+    label: Pages
+    files:
+      # Landing Page
+      - name: "landing"
+        label: "Landing Page"
+        file: "data/landing.json"
         fields:
-          - name: image
-            label: Image
+          - name: hero
+            label: Hero
             widget: object
+            collapsed: true
             fields:
-              - { name: imagePath, label: Image, widget: image }
-              - { name: alternateText, label: Alternate text, widget: string }
-              - { name: pageTitle, label: Page Title, widget: string }
-              - {
-                  name: pageDescription,
-                  label: Page Description,
-                  widget: string,
-                }
+              - name: image
+                label: Image
+                widget: object
+                fields:
+                  - { name: imagePath, label: Image, widget: image }
+                  - {
+                      name: alternateText,
+                      label: Alternate text,
+                      widget: string,
+                    }
+                  - { name: pageTitle, label: Page Title, widget: string }
+                  - {
+                      name: pageDescription,
+                      label: Page Description,
+                      widget: string,
+                    }
 
   # Blog Post Sections
   # TRAVEL
