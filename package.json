@@ -32,6 +32,7 @@
     "gatsby-transformer-sharp": "^2.5.0",
     "netlify-cms": "^2.10.47",
     "netlify-cms-app": "^2.12.11",
+    "netlify-cms-proxy-server": "^1.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-context-api": "^1.0.2",
@@ -53,7 +54,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "local-cms": "npx netlify-cms-proxy-server"
   },
   "repository": {
     "type": "git",
