@@ -9,4 +9,8 @@ export const fonts = {
     fontFamily: "'Amiri', serif",
     fontWeight: 400,
   },
+  footerText: {
+    fontFamily: "'Baloo Bhaina 2', cursive",
+    fontWeight: 400,
+  },
 }

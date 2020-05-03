@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import mq from "../../../styling/media-queries"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { SocialMediaLinks } from "../../social-media-links"
+import { SocialMediaLinks } from "../../common/social-media-links"
 import { colors } from "../../../styling/colors"
 
 type MobileNavbarState = {

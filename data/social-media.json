@@ -1,0 +1,22 @@
+{
+  "socialMedia": [
+    {
+      "link": {
+        "name": "Twitter",
+        "url": "https://twitter.com/bxmbinakatarina"
+      }
+    },
+    {
+      "link": {
+        "name": "Instagram",
+        "url": "https://www.instagram.com/bambinakatarina/"
+      }
+    },
+    {
+      "link": {
+        "url": "https://www.youtube.com/channel/UCYwp6yuXeUZBSI6n1RrDMEw",
+        "name": "Youtube"
+      }
+    }
+  ]
+}

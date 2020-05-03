@@ -3,6 +3,7 @@ import { Interpolation } from "@emotion/css"
 const stylesObject = <T>(x: { [k in keyof T]: Interpolation }) => x
 
 export const zIndex = {
+  pageContent: 1,
   layout: 100,
 }
 

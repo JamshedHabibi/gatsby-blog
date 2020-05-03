@@ -1,19 +1,20 @@
-const navbarBackground = "rgb(222,253,252)"
+const navbarBackground = "rgb(231,244,254)"
 const navbarText = "rgb(40,40,40)"
 const highlightNavbarText = "rgb(180,180,180)"
-const footerText = "rgb(160,160,160)"
-const footerSocialMediaLinks = "rgb(120,120,120,0.9)"
-const footerBackground = "rgb(230,230,230)"
-const headerSocialMediaLinks = "rgb(105, 254, 251)"
+const headerSocialMediaLinks = "rgb(180, 222, 255)"
+const footerText = "rgb(138,189,255)"
+const footerBackground = "rgb(231,244,254)"
+const footerDivider = "rgb(205,226,255)"
 
 export type ColorsType = {
   navbarBackground: string
   navbarText: string
   highlightNavbarText: string
+  headerSocialMediaLinks: string
   footerText: string
   footerSocialMediaLinks: string
   footerBackground: string
-  headerSocialMediaLinks: string
+  footerDivider: string
 }
 
 export const colors = {
@@ -21,7 +22,7 @@ export const colors = {
   navbarText,
   highlightNavbarText,
   footerText,
-  footerSocialMediaLinks,
   footerBackground,
   headerSocialMediaLinks,
+  footerDivider,
 }

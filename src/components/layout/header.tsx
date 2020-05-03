@@ -1,16 +1,19 @@
 import React, { Component } from "react"
-import { SocialMediaLinks } from "../social-media-links"
+import { SocialMediaLinks } from "../common/social-media-links"
 import mq from "../../styling/media-queries"
 import { colors } from "../../styling/colors"
 import { flex, zIndex } from "../../styling/constants"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { fonts } from "../../styling/fonts"
 
-export default class Header extends Component {
+type HeaderProps = {
+  headerTitle: string
+}
+
+export default class Header extends Component<HeaderProps> {
   componentDidMount() {
     this.changeHeaderHeightOnScroll()
   }
-
   changeHeaderHeightOnScroll = () => {
     window.onscroll = () => {
       let header = document.getElementById("layout-header")
@@ -32,7 +35,7 @@ export default class Header extends Component {
         css={[
           flex.rowCentered,
           mq({
-            display: ["none", "flex"],
+            display: ["none", "none", "flex"],
             width: "100%",
             height: "18vh",
             position: "fixed",
@@ -40,6 +43,7 @@ export default class Header extends Component {
             zIndex: zIndex.layout - 1,
             boxShadow: "0 .25px 25px rgb(235,235,235)",
             transition: "all 0.35s ease-in-out",
+            background: "white",
           }),
         ]}
       >
@@ -85,10 +89,11 @@ export default class Header extends Component {
                 color: "rgb(30,30,30)",
                 letterSpacing: ".3rem",
                 transition: "all 0.35s ease-in-out",
+                whiteSpace: "nowrap",
               },
             ]}
           >
-            BAMBINA KATARINA
+            {this.props.headerTitle}
           </div>
           <div css={[flex.rowCentered, { width: "20%" }]}>
             <SocialMediaLinks
@@ -97,7 +102,6 @@ export default class Header extends Component {
                 fontSize: ["0.8rem", "1rem"],
               })}
               textColor={colors.headerSocialMediaLinks}
-              padding={["0", "1rem", "1.7em"]}
             />
           </div>
         </div>

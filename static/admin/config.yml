@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
   branch: master
 
 media_folder: static/images
@@ -8,7 +9,33 @@ public_folder: /images
 site_url: https://bambinakatarina.netlify.app/
 
 collections:
-  - name: "pages"
+  # Layout
+  - name: layout
+    label: Layout
+    files:
+      # Header
+      - name: "header"
+        label: "Header"
+        file: "data/header.json"
+        fields:
+          - { name: title, label: Title, widget: string }
+      # Social media links
+      - name: "socialMedia"
+        label: "Social Media"
+        file: "data/social-media.json"
+        fields:
+          - name: socialMedia
+            label: Social Media
+            widget: list
+            fields:
+              - name: link
+                label: Link
+                widget: object
+                fields:
+                  - { name: name, label: Name, widget: string }
+                  - { name: url, label: URL, widget: string }
+  # Pages
+  - name: pages
     label: Pages
     files:
       # Landing Page
@@ -31,12 +58,12 @@ collections:
                       label: Alternate text,
                       widget: string,
                     }
-                  - { name: pageTitle, label: Page Title, widget: string }
-                  - {
-                      name: pageDescription,
-                      label: Page Description,
-                      widget: string,
-                    }
+              - { name: pageTitle, label: Page Title, widget: string }
+              - {
+                  name: pageDescription,
+                  label: Page Description,
+                  widget: string,
+                }
 
   # Blog Post Sections
   # TRAVEL
