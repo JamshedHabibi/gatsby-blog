@@ -45,14 +45,14 @@ class MobileNavbar extends Component<{}, MobileNavbarState> {
             fontSize: "1.25rem",
             zIndex: 100,
           })}
-          textColor={colors.navbarText}
+          textColor={colors.navbarTextMobile}
         />
         <div
           css={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
         >
           <FontAwesomeIcon
             css={{
-              color: colors.navbarText,
+              color: colors.navbarTextMobile,
               fontSize: "1.5rem",
               marginTop: ".8rem",
               cursor: "pointer",

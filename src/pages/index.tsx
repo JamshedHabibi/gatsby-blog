@@ -18,24 +18,6 @@ const IndexPage: React.FC<any> = () => {
 }
 
 const IndexPageContent: React.FC<any> = () => {
-  return (
-    <div css={[zIndex.pageContent]}>
-      <h1
-        css={{
-          display: "flex",
-          justifyContent: "center",
-          color: "black",
-          position: "relative",
-        }}
-      >
-        Latest Posts
-      </h1>
-      <div>Hello World</div>
-      <div>Hello World</div>
-      <div>Hello World</div>
-      <div>Hello World</div>
-      <div>Hello World</div>
-    </div>
-  )
+  return <div css={[zIndex.pageContent]}></div>
 }
 export default IndexPage
