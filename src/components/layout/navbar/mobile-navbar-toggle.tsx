@@ -32,36 +32,36 @@ class MobileNavbar extends Component<{}, MobileNavbarState> {
           display: ["flex", "none"],
           color: "white",
           paddingRight: "1rem",
-          paddingBottom: ".5rem",
+          paddingBottom: "1rem",
           background: colors.navbarBackground,
           zIndex: 100,
         })}
       >
         <SocialMediaLinks
           styling={mq({
-            display: "flex",
             width: "100%",
-            justifyContent: "initial",
-            marginRight: ["0", "2em"],
             paddingLeft: "1rem",
-            marginTop: "1.1rem",
+            marginTop: "1rem",
             fontSize: "1.25rem",
             zIndex: 100,
           })}
           textColor={colors.navbarText}
-          padding="1em"
         />
-        <FontAwesomeIcon
-          css={{
-            color: colors.navbarText,
-            fontSize: "1.5rem",
-            marginTop: "1rem",
-            cursor: "pointer",
-            zIndex: 100,
-          }}
-          icon={this.state.navbarActivated ? "times" : "align-right"}
-          onClick={() => this.navToggle()}
-        />
+        <div
+          css={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
+        >
+          <FontAwesomeIcon
+            css={{
+              color: colors.navbarText,
+              fontSize: "1.5rem",
+              marginTop: ".8rem",
+              cursor: "pointer",
+              zIndex: 100,
+            }}
+            icon={this.state.navbarActivated ? "times" : "align-right"}
+            onClick={() => this.navToggle()}
+          />
+        </div>
       </div>
     )
   }

@@ -62,16 +62,19 @@ const NavTabSocials: React.FC<NavTabSocialsProps> = ({
         color: color,
         transition: "all 0.2s ease-in-out",
         whiteSpace: "nowrap",
-        textAlign: "center",
+        textAlign: ["initial", "center"],
         textDecoration: "none",
-        paddingRight: `${footer ? "0" : "1.25rem"}`,
-        width: "100%",
+        paddingRight: ["1.5rem", `${footer ? "0" : "1.25rem"}`],
+        width: ["50%", "100%"],
         "&:hover": {
           color: highlightColor,
         },
       })}
     >
-      <FontAwesomeIcon icon={displayIcon} css={{ paddingRight: "1rem" }} />
+      <FontAwesomeIcon
+        icon={displayIcon}
+        css={mq({ paddingRight: [".5rem", "1rem"] })}
+      />
       {footer ? `${socialMediaName}` : null}
     </a>
   )

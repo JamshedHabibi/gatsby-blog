@@ -47,23 +47,24 @@ export const Footer: React.FC<FooterProps> = ({ copyrightName }) => {
       <div
         css={[
           flex.rowCentered,
-          {
+          mq({
             width: "80%",
             height: "10vh",
             color: colors.footerText,
             borderTop: `1px solid ${colors.footerDivider}`,
-          },
+            flexDirection: ["column", "initial"],
+          }),
         ]}
       >
         <div
           css={[
             fonts.footerText,
-            {
+            mq({
               width: "100%",
               display: "flex",
-              justifyContent: "flex-start",
+              justifyContent: ["center", "flex-start"],
               alignItems: "center",
-            },
+            }),
           ]}
         >
           © {new Date().getFullYear()}
@@ -73,12 +74,12 @@ export const Footer: React.FC<FooterProps> = ({ copyrightName }) => {
         <div
           css={[
             fonts.footerText,
-            {
+            mq({
               width: "100%",
-              display: "flex",
+              display: ["none", "flex"],
               justifyContent: "flex-end",
               alignItems: "center",
-            },
+            }),
           ]}
         >
           © {new Date().getFullYear()}
