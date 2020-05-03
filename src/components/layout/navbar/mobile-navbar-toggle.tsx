@@ -54,7 +54,7 @@ class MobileNavbar extends Component<{}, MobileNavbarState> {
             css={{
               color: colors.navbarTextMobile,
               fontSize: "1.5rem",
-              marginTop: ".8rem",
+              marginTop: "1rem",
               cursor: "pointer",
               zIndex: 100,
             }}
