@@ -19,7 +19,7 @@ collections:
         file: "data/header.json"
         fields:
           - { name: title, label: Title, widget: string }
-      # Social media links
+      # Social Media Links
       - name: "socialMedia"
         label: "Social Media"
         file: "data/social-media.json"
@@ -34,14 +34,20 @@ collections:
                 fields:
                   - { name: name, label: Name, widget: string }
                   - { name: url, label: URL, widget: string }
+      # Instagram Token Generator
+      - name: "instagramToken"
+        label: "Instagram Token"
+        file: "data/instagram-token.json"
+        fields:
+          - { name: token, label: Token, widget: string }
   # Pages
   - name: pages
     label: Pages
     files:
-      # Landing Page
-      - name: "landing"
-        label: "Landing Page"
-        file: "data/landing.json"
+      # Home Page
+      - name: "home"
+        label: "Home Page"
+        file: "data/home.json"
         fields:
           - name: hero
             label: Hero

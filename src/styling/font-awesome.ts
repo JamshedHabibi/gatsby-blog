@@ -5,9 +5,20 @@ import {
   faChevronDown,
   faTimes,
   faSearch,
+  faHeart,
+  faComment,
 } from "@fortawesome/free-solid-svg-icons"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 
 export default function getFontAwesomeIcons() {
-  library.add(fab, faCoffee, faAlignRight, faChevronDown, faTimes, faSearch)
+  library.add(
+    fab,
+    faCoffee,
+    faAlignRight,
+    faChevronDown,
+    faTimes,
+    faSearch,
+    faHeart,
+    faComment
+  )
 }

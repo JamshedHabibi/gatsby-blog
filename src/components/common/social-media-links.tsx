@@ -25,6 +25,7 @@ export const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
         (media: { link: { url: string; name: string } }) => (
           <NavTabSocials
             path={media.link.url}
+            key={media.link.url}
             socialMediaName={media.link.name}
             displayIcon={["fab", `${media.link.name.toLowerCase()}`]}
             color={textColor}

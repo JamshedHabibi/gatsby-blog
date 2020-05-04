@@ -7,17 +7,25 @@ import { useCmsContentQuery } from "../components/cms/cms-content-query"
 import { zIndex } from "../styling/constants"
 
 const IndexPage: React.FC<any> = () => {
-  const heroContent = useCmsContentQuery()
-  console.log(heroContent)
+  const cmsContent = useCmsContentQuery()
+  console.log(cmsContent)
   return (
     <Layout>
       <SEO title="Home" />
-      <IndexPageContent />
+      <IndexPageContent cmsContent={cmsContent} />
     </Layout>
   )
 }
 
-const IndexPageContent: React.FC<any> = () => {
-  return <div css={[zIndex.pageContent]}></div>
+const IndexPageContent: React.FC<any> = ({ cmsContent }) => {
+  return (
+    <div css={[zIndex.pageContent]}>
+      <div>
+        {cmsContent.instagramContent.nodes.map((post: any) => {
+          return <img src={post.original} key={post.id} />
+        })}
+      </div>
+    </div>
+  )
 }
 export default IndexPage

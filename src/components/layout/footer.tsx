@@ -10,14 +10,14 @@ type FooterProps = {
 }
 export const Footer: React.FC<FooterProps> = ({ copyrightName }) => {
   return (
-    <div
+    <footer
       css={[
         flex.columnCentered,
         {
-          position: "absolute",
-          bottom: "0",
-          width: "100%",
           background: colors.footerBackground,
+          position: "relative",
+          top: "100%",
+          height: "100%",
         },
       ]}
     >
@@ -87,6 +87,6 @@ export const Footer: React.FC<FooterProps> = ({ copyrightName }) => {
           CREATED BY JAMSHED HABIBI
         </div>
       </div>
-    </div>
+    </footer>
   )
 }

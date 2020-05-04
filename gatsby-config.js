@@ -21,6 +21,12 @@ module.exports = {
         path: `${__dirname}/src/fonts`,
       },
     },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `bambinakatarina`,
+      },
+    },
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
