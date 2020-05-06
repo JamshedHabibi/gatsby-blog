@@ -40,7 +40,7 @@ export const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
 
 type NavTabSocialsProps = {
   path: string
-  displayIcon: IconLookup
+  displayIcon: IconLookup | string[]
   color?: string
   highlightColor?: string
   footer: boolean
@@ -63,9 +63,9 @@ const NavTabSocials: React.FC<NavTabSocialsProps> = ({
         color: color,
         transition: "all 0.2s ease-in-out",
         whiteSpace: "nowrap",
-        textAlign: ["initial", "center"],
+        textAlign: "center",
         textDecoration: "none",
-        paddingRight: ["1.5rem", `${footer ? "0" : "1.25rem"}`],
+        paddingRight: ["1.5rem", "0"],
         width: ["50%", "100%"],
         "&:hover": {
           color: highlightColor,
@@ -74,7 +74,7 @@ const NavTabSocials: React.FC<NavTabSocialsProps> = ({
     >
       <FontAwesomeIcon
         icon={displayIcon}
-        css={mq({ paddingRight: [".5rem", "1rem"] })}
+        css={mq({ paddingRight: [".5rem", footer ? "1rem" : "0"] })}
       />
       {footer ? `${socialMediaName}` : null}
     </a>

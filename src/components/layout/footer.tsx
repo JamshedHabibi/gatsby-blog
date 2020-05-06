@@ -14,7 +14,7 @@ export const Footer: React.FC<FooterProps> = ({ copyrightName }) => {
       css={[
         flex.columnCentered,
         {
-          background: colors.footerBackground,
+          background: colors.mainBabyBlue,
           position: "relative",
           top: "100%",
           height: "100%",
@@ -40,7 +40,7 @@ export const Footer: React.FC<FooterProps> = ({ copyrightName }) => {
               paddingTop: "2.5vh",
             },
           ]}
-          textColor={colors.footerText}
+          textColor={colors.mainBlueText}
           footer
         />
       </div>
@@ -50,7 +50,7 @@ export const Footer: React.FC<FooterProps> = ({ copyrightName }) => {
           mq({
             width: "80%",
             height: "10vh",
-            color: colors.footerText,
+            color: colors.mainBlueText,
             borderTop: `1px solid ${colors.footerDivider}`,
             flexDirection: ["column", "initial"],
           }),

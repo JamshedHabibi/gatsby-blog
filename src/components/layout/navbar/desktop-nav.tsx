@@ -13,7 +13,7 @@ const DesktopNav: React.FC<any> = ({ children }) => {
         position: "fixed",
         top: "0vh",
         zIndex: zIndex.layout,
-        background: colors.navbarBackground,
+        background: colors.mainBabyBlue,
       })}
     >
       {children}

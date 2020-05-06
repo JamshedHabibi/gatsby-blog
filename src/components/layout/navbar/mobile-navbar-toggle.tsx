@@ -18,9 +18,9 @@ class MobileNavbar extends Component<{}, MobileNavbarState> {
 
   navToggle = () => {
     if (this.state.navbarActivated) {
-      document.getElementById("nav-tabs").style.top = "-10vh"
+      document.getElementById("nav-tabs").style.top = "-10%"
     } else {
-      document.getElementById("nav-tabs").style.top = "7.5vh"
+      document.getElementById("nav-tabs").style.top = "7.5%"
     }
     this.setState({ navbarActivated: !this.state.navbarActivated })
   }
@@ -33,30 +33,34 @@ class MobileNavbar extends Component<{}, MobileNavbarState> {
           color: "white",
           paddingRight: "1rem",
           paddingBottom: "1rem",
-          background: colors.navbarBackground,
+          background: colors.mainBabyBlue,
           zIndex: 100,
+          position: "fixed",
+          top: 0,
+          width: "100%",
         })}
       >
         <SocialMediaLinks
           styling={mq({
             width: "100%",
             paddingLeft: "1rem",
-            marginTop: "1rem",
+            marginTop: "1.2rem",
             fontSize: "1.25rem",
             zIndex: 100,
           })}
-          textColor={colors.navbarTextMobile}
+          textColor={colors.mainBlueText}
         />
         <div
           css={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
         >
           <FontAwesomeIcon
             css={{
-              color: colors.navbarTextMobile,
+              color: colors.mainBlueText,
               fontSize: "1.5rem",
               marginTop: "1rem",
               cursor: "pointer",
               zIndex: 100,
+              paddingRight: "1rem",
             }}
             icon={this.state.navbarActivated ? "times" : "align-right"}
             onClick={() => this.navToggle()}

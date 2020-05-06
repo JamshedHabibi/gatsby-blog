@@ -19,16 +19,6 @@ export const useCmsContentQuery = () => {
         }
       }
 
-      instagramToken: allFile(
-        filter: { base: { eq: "instagram-token.json" } }
-      ) {
-        nodes {
-          childDataJson {
-            token
-          }
-        }
-      }
-
       header: allFile(filter: { base: { eq: "header.json" } }) {
         nodes {
           childDataJson {
@@ -53,13 +43,12 @@ export const useCmsContentQuery = () => {
       homePage: allFile(filter: { base: { eq: "home.json" } }) {
         nodes {
           childDataJson {
-            hero {
+            categoryCard {
+              categoryTitle
               image {
                 alternateText
                 imagePath
               }
-              pageTitle
-              pageDescription
             }
           }
         }

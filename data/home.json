@@ -1,10 +1,24 @@
 {
-  "hero": {
-    "image": {
-      "imagePath": "/images/img_1074.jpg",
-      "alternateText": "cp fc"
+  "categoryCard": [{
+      "categoryTitle": "Travel",
+      "image": {
+        "imagePath": "/images/travel.jpg",
+        "alternateText": "Travel"
+      }
     },
-    "pageTitle": "Bambina Katarina",
-    "pageDescription": "Welcome to my blog"
-  }
+    {
+      "categoryTitle": "Style",
+      "image": {
+        "imagePath": "/images/fashion.jpg",
+        "alternateText": "Style"
+      }
+    },
+    {
+      "categoryTitle": "Bookish",
+      "image": {
+        "imagePath": "/images/bookish.jpg",
+        "alternateText": "bookish"
+      }
+    }
+  ]
 }

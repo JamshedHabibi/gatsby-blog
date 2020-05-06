@@ -11,7 +11,7 @@ export const MobileNav: React.FC<any> = ({ children }) => {
         css={mq({
           display: ["initial", "none"],
           width: "100%",
-          position: "absolute",
+          position: "fixed",
           top: "-33vh",
           background: colors.navbarBackground,
           zIndex: zIndex.layout,

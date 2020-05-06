@@ -1,15 +1,15 @@
 import React from "react"
 import { InstagramContentProps } from "./instagram-content-props"
-import { flex } from "../../styling/constants"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import mq from "../../styling/media-queries"
 
 type InstagramFeedProps = {
   instagramContent: InstagramContentProps
+  instagramLink: { link: { name: string; url: string } }
 }
 
 export const InstagramFeed: React.FC<InstagramFeedProps> = ({
   instagramContent,
+  instagramLink,
 }) => (
   <div
     css={[
@@ -35,7 +35,7 @@ export const InstagramFeed: React.FC<InstagramFeedProps> = ({
             },
           }}
         >
-          <a href="https://www.instagram.com/bambinakatarina/" target="_blank">
+          <a href={instagramLink.link.url} target="_blank">
             <img
               src={post.thumbnails[1].src}
               alt={post.caption}

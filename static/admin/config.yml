@@ -34,12 +34,7 @@ collections:
                 fields:
                   - { name: name, label: Name, widget: string }
                   - { name: url, label: URL, widget: string }
-      # Instagram Token Generator
-      - name: "instagramToken"
-        label: "Instagram Token"
-        file: "data/instagram-token.json"
-        fields:
-          - { name: token, label: Token, widget: string }
+
   # Pages
   - name: pages
     label: Pages
@@ -49,11 +44,11 @@ collections:
         label: "Home Page"
         file: "data/home.json"
         fields:
-          - name: hero
-            label: Hero
-            widget: object
-            collapsed: true
+          - name: categoryCard
+            label: Category Card
+            widget: list
             fields:
+              - { name: categoryTitle, label: Category Title, widget: string }
               - name: image
                 label: Image
                 widget: object
@@ -64,12 +59,6 @@ collections:
                       label: Alternate text,
                       widget: string,
                     }
-              - { name: pageTitle, label: Page Title, widget: string }
-              - {
-                  name: pageDescription,
-                  label: Page Description,
-                  widget: string,
-                }
 
   # Blog Post Sections
   # TRAVEL

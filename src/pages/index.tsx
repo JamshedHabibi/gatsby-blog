@@ -1,30 +1,40 @@
 import React from "react"
-import { Link, StaticQuery } from "gatsby"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-import { PageTitle } from "../components/common/page-title"
 import { useCmsContentQuery } from "../components/cms/cms-content-query"
 import { zIndex } from "../styling/constants"
+import { PortraitCategoryCard } from "../components/common/portrait-category-card"
+import mq from "../styling/media-queries"
 
 const IndexPage: React.FC<any> = () => {
-  const cmsContent = useCmsContentQuery()
-  console.log(cmsContent)
+  const homeCmsContent = useCmsContentQuery().homePage.nodes[0].childDataJson
   return (
     <Layout>
       <SEO title="Home" />
-      <IndexPageContent cmsContent={cmsContent} />
+      <IndexPageContent homeContent={homeCmsContent} />
     </Layout>
   )
 }
 
-const IndexPageContent: React.FC<any> = ({ cmsContent }) => {
+const IndexPageContent: React.FC<any> = ({ homeContent }) => {
   return (
-    <div css={[zIndex.pageContent]}>
-      <div>
-        {cmsContent.instagramContent.nodes.map((post: any) => {
-          return <img src={post.original} key={post.id} />
-        })}
-      </div>
+    <div
+      css={mq([
+        zIndex.pageContent,
+        {
+          display: "flex",
+          flexDirection: ["column", "row"],
+          justifyContent: "space-between",
+          alignItems: "center",
+        },
+      ])}
+    >
+      {homeContent.categoryCard.map(card => (
+        <PortraitCategoryCard
+          categoryTitle={card.categoryTitle}
+          image={card.image}
+        />
+      ))}
     </div>
   )
 }
