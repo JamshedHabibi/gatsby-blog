@@ -1,6 +1,7 @@
 import React from "react"
-import { flex } from "../../styling/constants"
+import { Link } from "gatsby"
 import { colors } from "../../styling/colors"
+import { fonts } from "../../styling/fonts"
 
 type PortraitCategoryCardProps = {
   categoryTitle: string
@@ -21,11 +22,7 @@ export const PortraitCategoryCard: React.FC<PortraitCategoryCardProps> = ({
         src={image.imagePath}
         alt={image.alternativeText}
       />
-      <div
-        css={{
-          position: "absolute",
-        }}
-      >
+      <div css={{ position: "absolute" }}>
         <PortraitCategoryCardContent title={categoryTitle} />
       </div>
     </div>
@@ -40,7 +37,7 @@ const PortraitCategoryCardContent: React.FC<{ title: string }> = ({
       css={{
         width: "15rem",
         height: "23rem",
-        border: ".5px solid white",
+        border: ".25px solid rgb(250,250,250,0.6)",
         position: "relative",
         top: ".9rem",
         left: "1rem",
@@ -49,21 +46,27 @@ const PortraitCategoryCardContent: React.FC<{ title: string }> = ({
         alignItems: "center",
       }}
     >
-      <div
-        css={{
-          padding: ".6rem 1.75rem",
-          border: "none",
-          background: "white",
-          cursor: "pointer",
-          transition: "all 0.2s ease-in-out",
-          "&:hover": {
-            background: colors.mainBlueText,
-            color: "white",
+      <Link
+        to={`/blog/${title.toLowerCase()}`}
+        css={[
+          fonts.categoryCard,
+          {
+            padding: ".1rem 1.5rem",
+            border: "none",
+            background: "white",
+            cursor: "pointer",
+            transition: "all 0.2s ease-in-out",
+            textDecoration: "none",
+            color: "black",
+            "&:hover": {
+              background: colors.mainBlueText,
+              color: "white",
+            },
           },
-        }}
+        ]}
       >
         {title}
-      </div>
+      </Link>
     </div>
   )
 }

@@ -13,4 +13,8 @@ export const fonts = {
     fontFamily: "'Baloo Bhaina 2', cursive",
     fontWeight: 400,
   },
+  categoryCard: {
+    fontFamily: "'Baloo Bhaina 2', cursive",
+    fontWeight: 400,
+  },
 }
