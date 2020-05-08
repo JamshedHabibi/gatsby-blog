@@ -9,8 +9,8 @@ export const SidePanelTitle: React.FC<SidePanelTitleProps> = ({ title }) => (
     css={{
       border: `1px solid ${colors.mainBlueText}`,
       textAlign: "center",
-      width: "100%",
-      padding: ".5rem .5rem",
+      width: "13rem",
+      padding: ".5rem 0rem",
     }}
   >
     {title}
