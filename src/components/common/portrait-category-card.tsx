@@ -19,15 +19,15 @@ export const PortraitCategoryCard: React.FC<PortraitCategoryCardProps> = ({
       css={mq({
         display: "flex",
         padding: ["1rem 0", "0 .25rem"],
-        width: "33.333%",
+        width: ["70%", "33.333%"],
       })}
     >
       <img
-        css={{
+        css={mq({
           width: "100%",
-          height: "30rem",
+          height: ["23rem", "30rem"],
           objectFit: "cover",
-        }}
+        })}
         src={image.imagePath}
         alt={image.alternativeText}
       />
@@ -36,8 +36,8 @@ export const PortraitCategoryCard: React.FC<PortraitCategoryCardProps> = ({
           position: "absolute",
           display: "flex",
           justifyContent: "center",
-          width: ["33.2%", "22.7%"],
-          height: "69.8%",
+          width: ["70.2%", "22.7%"],
+          height: ["55%", "69.8%"],
           alignItems: "center",
         })}
       >
