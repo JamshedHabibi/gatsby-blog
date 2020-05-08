@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { colors } from "../../styling/colors"
 import { fonts } from "../../styling/fonts"
+import { Button } from "./buttons"
 
 type PortraitCategoryCardProps = {
   categoryTitle: string
@@ -18,6 +19,7 @@ export const PortraitCategoryCard: React.FC<PortraitCategoryCardProps> = ({
         css={{
           width: "17rem",
           height: "25rem",
+          objectFit: "cover",
         }}
         src={image.imagePath}
         alt={image.alternativeText}
@@ -46,27 +48,14 @@ const PortraitCategoryCardContent: React.FC<{ title: string }> = ({
         alignItems: "center",
       }}
     >
-      <Link
-        to={`/blog/${title.toLowerCase()}`}
-        css={[
-          fonts.categoryCard,
-          {
-            padding: ".1rem 1.5rem",
-            border: "none",
-            background: "white",
-            cursor: "pointer",
-            transition: "all 0.2s ease-in-out",
-            textDecoration: "none",
-            color: "black",
-            "&:hover": {
-              background: colors.mainBlueText,
-              color: "white",
-            },
-          },
-        ]}
-      >
-        {title}
-      </Link>
+      <Button
+        urlPath={`/blog/${title.toLowerCase()}`}
+        buttonText={title}
+        textColor="black"
+        backgroundColor="white"
+        hoverBackgroundColor={colors.mainBlueText}
+        hoverTextColor="white"
+      />
     </div>
   )
 }

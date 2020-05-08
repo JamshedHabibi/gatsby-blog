@@ -16,12 +16,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/fonts`,
-      },
-    },
-    {
       resolve: `gatsby-source-instagram`,
       options: {
         username: `bambinakatarina`,

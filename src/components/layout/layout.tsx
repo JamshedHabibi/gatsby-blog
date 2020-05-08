@@ -7,7 +7,7 @@ import Header from "./header"
 import { useCmsContentQuery } from "../cms/cms-content-query"
 import { InstagramFeed } from "../layout/instagram-feed"
 import mq from "../../styling/media-queries"
-import { flex } from "../../styling/constants"
+import { flex, zIndex } from "../../styling/constants"
 
 type LayoutProps = {
   children: any
@@ -24,13 +24,15 @@ const Layout = ({ children }: LayoutProps) => {
       <div
         css={[
           flex.columnCentered,
-          {
+          mq({
             width: "100%",
-            paddingTop: "30vh",
-          },
+            paddingTop: ["30vh", "35vh"],
+          }),
         ]}
       >
-        <main css={mq({ width: ["80%", "70%"] })}>{children}</main>
+        <main css={[zIndex.pageContent, mq({ width: ["80%", "70%"] })]}>
+          {children}
+        </main>
       </div>
       <div css={mq({ overflowX: "hidden" })}>
         <InstagramFeed

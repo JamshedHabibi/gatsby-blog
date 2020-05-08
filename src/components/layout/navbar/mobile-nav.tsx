@@ -13,7 +13,8 @@ export const MobileNav: React.FC<any> = ({ children }) => {
           width: "100%",
           position: "fixed",
           top: "-33vh",
-          background: colors.navbarBackground,
+          padding: ".33rem 0",
+          background: colors.mainBabyBlue,
           zIndex: zIndex.layout,
           transition: "all 0.3s ease-in",
         })}

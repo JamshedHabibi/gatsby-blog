@@ -2,9 +2,10 @@ import React from "react"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import { useCmsContentQuery } from "../components/cms/cms-content-query"
-import { zIndex } from "../styling/constants"
 import { PortraitCategoryCard } from "../components/common/portrait-category-card"
 import mq from "../styling/media-queries"
+import BlogPost from "../components/common/blog-posts"
+import { SidePanel } from "../components/layout/side-panel/side-panel"
 
 const IndexPage: React.FC<any> = () => {
   const homeCmsContent = useCmsContentQuery().homePage.nodes[0].childDataJson
@@ -18,23 +19,37 @@ const IndexPage: React.FC<any> = () => {
 
 const IndexPageContent: React.FC<any> = ({ homeContent }) => {
   return (
-    <div
-      css={mq([
-        zIndex.pageContent,
-        {
+    <div>
+      <div
+        css={mq({
           display: "flex",
           flexDirection: ["column", "row"],
           justifyContent: "space-between",
           alignItems: "center",
-        },
-      ])}
-    >
-      {homeContent.categoryCard.map(card => (
-        <PortraitCategoryCard
-          categoryTitle={card.categoryTitle}
-          image={card.image}
-        />
-      ))}
+          marginBottom: "3rem",
+        })}
+      >
+        {homeContent.categoryCard.map(
+          (card: {
+            categoryTitle: string
+            image: { imagePath: string; alternativeText: string }
+          }) => (
+            <PortraitCategoryCard
+              categoryTitle={card.categoryTitle}
+              image={card.image}
+            />
+          )
+        )}
+      </div>
+
+      <div css={{ display: "flex" }}>
+        <div css={{ width: "75%" }}>
+          <BlogPost />
+        </div>
+        <div css={{ width: "25%" }}>
+          <SidePanel />
+        </div>
+      </div>
     </div>
   )
 }

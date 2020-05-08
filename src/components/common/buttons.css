@@ -1,0 +1,16 @@
+#blog-post-button:before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 1%;
+  bottom: -3px;
+  left: 0;
+  background-position: left bottom;
+  background-color: rgb(138, 189, 255);
+  transition: all 0.3s ease-in-out;
+}
+
+#blog-post-button:hover:before {
+  visibility: visible;
+  width: 100%;
+}

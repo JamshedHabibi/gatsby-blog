@@ -17,4 +17,12 @@ export const fonts = {
     fontFamily: "'Baloo Bhaina 2', cursive",
     fontWeight: 400,
   },
+  continueReadingBlog: {
+    fontFamily: "'Lora', serif",
+    fontWeight: 400,
+  },
+  mainPageText: {
+    fontFamily: "'Baloo Bhaina 2', cursive",
+    fontWeight: 400,
+  },
 }

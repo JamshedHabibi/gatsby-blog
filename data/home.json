@@ -7,17 +7,17 @@
       }
     },
     {
-      "categoryTitle": "Style",
+      "categoryTitle": "Lifestyle",
       "image": {
         "imagePath": "/images/fashion.jpg",
-        "alternateText": "Style"
+        "alternateText": "Lifestyle"
       }
     },
     {
       "categoryTitle": "Bookish",
       "image": {
         "imagePath": "/images/bookish.jpg",
-        "alternateText": "bookish"
+        "alternateText": "Bookish"
       }
     }
   ]
