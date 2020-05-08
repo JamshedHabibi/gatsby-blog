@@ -19,14 +19,21 @@ const IndexPage: React.FC<any> = () => {
 
 const IndexPageContent: React.FC<any> = ({ homeContent }) => {
   return (
-    <div>
+    <div
+      css={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
       <div
         css={mq({
           display: "flex",
           flexDirection: ["column", "row"],
-          justifyContent: "space-between",
+          justifyContent: "space-evenly",
           alignItems: "center",
           marginBottom: "3rem",
+          width: "100%",
         })}
       >
         {homeContent.categoryCard.map(

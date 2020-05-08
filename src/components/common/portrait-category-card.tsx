@@ -14,7 +14,13 @@ export const PortraitCategoryCard: React.FC<PortraitCategoryCardProps> = ({
   image,
 }) => {
   return (
-    <div css={{ display: "flex", paddingBottom: "1rem" }}>
+    <div
+      css={{
+        display: "flex",
+        paddingBottom: "1rem",
+        padding: "0 .25rem",
+      }}
+    >
       <img
         css={{
           width: "21rem",
