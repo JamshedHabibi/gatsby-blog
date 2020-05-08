@@ -1,8 +1,7 @@
 import React from "react"
 import { fonts } from "../../styling/fonts"
 import { Link } from "gatsby"
-import "./buttons.css"
-import { colors } from "src/styling/colors"
+import { colors } from "../../styling/colors"
 
 type ButtonProps = {
   urlPath: string
@@ -66,6 +65,21 @@ export const BlogButton: React.FC<ButtonProps> = ({
           transition: "all 0.3s ease-in-out",
           position: "relative",
           "&:hover": { color: hoverTextColor },
+          "&:before": {
+            content: "''",
+            position: "absolute",
+            width: "25%",
+            height: "1%",
+            bottom: continueReadingBtn ? "-3px" : "3px",
+            left: "0",
+            backgroundPosition: "left bottom",
+            backgroundColor: "rgb(138, 189, 255)",
+            transition: "all 0.3s ease-in-out",
+          },
+          "&:hover:before": {
+            visibility: "visible",
+            width: "100%",
+          },
         },
       ]}
     >

@@ -19,18 +19,28 @@ export const PortraitCategoryCard: React.FC<PortraitCategoryCardProps> = ({
       css={mq({
         display: "flex",
         padding: ["1rem 0", "0 .25rem"],
+        width: "33.333%",
       })}
     >
       <img
         css={{
-          width: "21rem",
+          width: "100%",
           height: "30rem",
           objectFit: "cover",
         }}
         src={image.imagePath}
         alt={image.alternativeText}
       />
-      <div css={{ position: "absolute" }}>
+      <div
+        css={mq({
+          position: "absolute",
+          display: "flex",
+          justifyContent: "center",
+          width: ["33.2%", "22.5%"],
+          height: "63.4%",
+          alignItems: "center",
+        })}
+      >
         <PortraitCategoryCardContent title={categoryTitle} />
       </div>
     </div>
@@ -43,12 +53,10 @@ const PortraitCategoryCardContent: React.FC<{ title: string }> = ({
   return (
     <div
       css={{
-        width: "19rem",
-        height: "28rem",
-        border: ".25px solid rgb(250,250,250,0.6)",
-        position: "relative",
+        width: "90%",
+        height: "93%",
+        border: ".25px solid rgb(255,255,255,0.6)",
         top: ".9rem",
-        left: "1rem",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

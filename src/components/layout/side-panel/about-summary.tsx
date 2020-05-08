@@ -19,7 +19,7 @@ export const AboutSummary: React.FC<any> = ({}) => (
       <img
         src="https://static.wixstatic.com/media/952696_672901d8ab7a4a9d963a002a372b8a52~mv2_d_5472_3648_s_4_2.jpg/v1/fill/w_989,h_658,al_c,q_85,usm_0.66_1.00_0.01/IMG_2152.webp"
         alt=""
-        css={{ height: "13rem", width: "13rem", objectFit: "cover" }}
+        css={{ height: "10rem", width: "100%", objectFit: "cover" }}
       />
     </div>
     <div css={[flex.rowCentered]}>
