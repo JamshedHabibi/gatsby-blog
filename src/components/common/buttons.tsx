@@ -11,6 +11,7 @@ type ButtonProps = {
   hoverTextColor: string
   backgroundColor?: string
   hoverBackgroundColor?: string
+  continueReadingBtn?: boolean
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -49,30 +50,22 @@ export const BlogButton: React.FC<ButtonProps> = ({
   buttonText,
   textColor,
   hoverTextColor,
+  continueReadingBtn,
 }) => (
   <div css={{ border: "1px solid rgb(0,0,0,0)" }}>
     <Link
       to={urlPath}
-      id="blog-post-button"
+      className={`blog-post-button ${
+        continueReadingBtn ? "continueReadingBtn" : "linkToCategory"
+      }`}
       css={[
-        fonts.lora,
+        continueReadingBtn ? fonts.lora : fonts.mainPageText,
         {
           textDecoration: "none",
           color: textColor,
           transition: "all 0.3s ease-in-out",
           position: "relative",
           "&:hover": { color: hoverTextColor },
-          "&:before": {
-            content: "",
-            position: "absolute",
-            width: "25%",
-            height: "5%",
-            bottom: "-3px",
-            left: "0",
-            backgroundPosition: "left bottom",
-            backgroundColor: hoverTextColor,
-            transition: "all 0.3s ease-in-out",
-          },
         },
       ]}
     >

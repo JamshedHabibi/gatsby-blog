@@ -1,4 +1,4 @@
-#blog-post-button:before {
+.blog-post-button.continueReadingBtn:before {
   content: "";
   position: absolute;
   width: 25%;
@@ -10,7 +10,24 @@
   transition: all 0.3s ease-in-out;
 }
 
-#blog-post-button:hover:before {
+.blog-post-button.continueReadingBtn:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+
+.blog-post-button.linkToCategory:before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 1%;
+  bottom: 5px;
+  left: 0;
+  background-position: left bottom;
+  background-color: rgb(138, 189, 255);
+  transition: all 0.3s ease-in-out;
+}
+
+.blog-post-button.linkToCategory:hover:before {
   visibility: visible;
   width: 100%;
 }

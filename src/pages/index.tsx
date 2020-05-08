@@ -9,12 +9,18 @@ import { SidePanel } from "../components/layout/side-panel/side-panel"
 
 const IndexPage: React.FC<any> = () => {
   const homeCmsContent = useCmsContentQuery().homePage.nodes[0].childDataJson
+  const ontent = useCmsContentQuery().homePage.nodes[0].childDataJson
   return (
     <Layout>
       <SEO title="Home" />
       <IndexPageContent homeContent={homeCmsContent} />
     </Layout>
   )
+}
+
+type CategoryCardProps = {
+  categoryTitle: string
+  image: { imagePath: string; alternativeText: string }
 }
 
 const IndexPageContent: React.FC<any> = ({ homeContent }) => {
@@ -36,17 +42,12 @@ const IndexPageContent: React.FC<any> = ({ homeContent }) => {
           width: "100%",
         })}
       >
-        {homeContent.categoryCard.map(
-          (card: {
-            categoryTitle: string
-            image: { imagePath: string; alternativeText: string }
-          }) => (
-            <PortraitCategoryCard
-              categoryTitle={card.categoryTitle}
-              image={card.image}
-            />
-          )
-        )}
+        {homeContent.categoryCard.map((card: CategoryCardProps) => (
+          <PortraitCategoryCard
+            categoryTitle={card.categoryTitle}
+            image={card.image}
+          />
+        ))}
       </div>
 
       <div css={{ display: "flex", justifyContent: "center" }}>

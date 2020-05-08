@@ -26,7 +26,12 @@ const BlogPost: React.FC<any> = ({}) => {
             },
           }}
         >
-          Bookish
+          <BlogButton
+            urlPath={`/blog/travel`}
+            buttonText="Bookish"
+            textColor={colors.mainBlueText}
+            hoverTextColor={colors.mainBlueText}
+          />
         </div>
         <div css={mq({ fontSize: ["1.6rem", "1.8rem"] })}>
           the a-z bookish survey
@@ -55,6 +60,7 @@ const BlogPost: React.FC<any> = ({}) => {
             buttonText="Continue Reading →"
             textColor="black"
             hoverTextColor={colors.mainBlueText}
+            continueReadingBtn
           />
         </div>
       </div>
