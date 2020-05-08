@@ -24,7 +24,9 @@ const BlogPost: React.FC<any> = ({}) => {
         >
           Bookish
         </div>
-        <div css={{ fontSize: "1.8rem" }}>the a-z bookish survey</div>
+        <div css={mq({ fontSize: ["1.6rem", "1.8rem"] })}>
+          the a-z bookish survey
+        </div>
         <div css={{ fontSize: "0.9rem", paddingBottom: "1rem" }}>
           April 21st, 2020 • 5 min read
         </div>

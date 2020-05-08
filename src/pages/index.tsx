@@ -42,11 +42,11 @@ const IndexPageContent: React.FC<any> = ({ homeContent }) => {
         )}
       </div>
 
-      <div css={{ display: "flex" }}>
+      <div css={{ display: "flex", justifyContent: "center" }}>
         <div css={{ width: "75%" }}>
           <BlogPost />
         </div>
-        <div css={{ width: "25%" }}>
+        <div css={mq({ width: "25%", display: ["none", "initial"] })}>
           <SidePanel />
         </div>
       </div>
