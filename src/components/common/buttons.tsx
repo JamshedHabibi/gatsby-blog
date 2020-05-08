@@ -26,7 +26,7 @@ export const Button: React.FC<ButtonProps> = ({
     css={[
       fonts.categoryCard,
       {
-        padding: ".1rem 1.5rem",
+        padding: ".33rem 2rem",
         border: "none",
         background: backgroundColor,
         cursor: "pointer",
