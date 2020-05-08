@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { colors } from "../../styling/colors"
 import { fonts } from "../../styling/fonts"
 import { Button } from "./buttons"
+import mq from "../../styling/media-queries"
 
 type PortraitCategoryCardProps = {
   categoryTitle: string
@@ -15,11 +16,10 @@ export const PortraitCategoryCard: React.FC<PortraitCategoryCardProps> = ({
 }) => {
   return (
     <div
-      css={{
+      css={mq({
         display: "flex",
-        paddingBottom: "1rem",
-        padding: "0 .25rem",
-      }}
+        padding: ["1rem 0", "0 .25rem"],
+      })}
     >
       <img
         css={{
