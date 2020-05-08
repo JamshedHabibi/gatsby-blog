@@ -55,7 +55,7 @@ export const BlogButton: React.FC<ButtonProps> = ({
       to={urlPath}
       id="blog-post-button"
       css={[
-        fonts.continueReadingBlog,
+        fonts.lora,
         {
           textDecoration: "none",
           color: textColor,

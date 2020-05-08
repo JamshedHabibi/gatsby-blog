@@ -8,11 +8,15 @@ const BlogPost: React.FC<any> = ({}) => {
   return (
     <div css={mq({ display: "flex", flexDirection: ["column"] })}>
       <img
-        css={{ height: "27rem", width: "100%", objectFit: "cover" }}
+        css={mq({
+          height: ["20rem", "27rem"],
+          width: "100%",
+          objectFit: "cover",
+        })}
         src="/images/travel.jpg"
         alt=""
       />
-      <div css={[fonts.mainPageText, { padding: "1rem 1rem" }]}>
+      <div css={[fonts.mainPageText, { paddingTop: "1rem" }]}>
         <div
           css={{
             color: colors.mainBlueText,
@@ -27,7 +31,16 @@ const BlogPost: React.FC<any> = ({}) => {
         <div css={mq({ fontSize: ["1.6rem", "1.8rem"] })}>
           the a-z bookish survey
         </div>
-        <div css={{ fontSize: "0.9rem", paddingBottom: "1rem" }}>
+        <div
+          css={[
+            fonts.lora,
+            {
+              fontSize: "0.75rem",
+              paddingBottom: "1rem",
+              color: colors.greyText,
+            },
+          ]}
+        >
           April 21st, 2020 • 5 min read
         </div>
         <div css={{ fontSize: "0.8rem", paddingBottom: "1rem" }}>

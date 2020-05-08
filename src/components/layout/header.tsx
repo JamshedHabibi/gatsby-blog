@@ -71,6 +71,7 @@ export default class Header extends Component<HeaderProps> {
                 letterSpacing: ".3rem",
                 transition: "all 0.35s ease-in-out",
                 whiteSpace: "nowrap",
+                paddingTop: [".75rem", ".25rem"],
               }),
             ]}
           >

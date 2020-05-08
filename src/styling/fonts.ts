@@ -17,7 +17,7 @@ export const fonts = {
     fontFamily: "'Baloo Bhaina 2', cursive",
     fontWeight: 400,
   },
-  continueReadingBlog: {
+  lora: {
     fontFamily: "'Lora', serif",
     fontWeight: 400,
   },
