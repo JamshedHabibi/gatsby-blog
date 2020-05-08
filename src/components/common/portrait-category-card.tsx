@@ -25,7 +25,7 @@ export const PortraitCategoryCard: React.FC<PortraitCategoryCardProps> = ({
       <img
         css={{
           width: "100%",
-          height: "33rem",
+          height: "30rem",
           objectFit: "cover",
         }}
         src={image.imagePath}
@@ -54,7 +54,7 @@ const PortraitCategoryCardContent: React.FC<{ title: string }> = ({
     <div
       css={{
         width: "90%",
-        height: "94%",
+        height: "93%",
         border: ".25px solid rgb(255,255,255,0.6)",
         display: "flex",
         position: "relative",
