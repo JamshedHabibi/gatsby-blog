@@ -4,12 +4,13 @@ import SEO from "../components/seo"
 import { useCmsContentQuery } from "../components/cms/cms-content-query"
 import { PortraitCategoryCard } from "../components/common/portrait-category-card"
 import mq from "../styling/media-queries"
-import BlogPost from "../components/common/blog-posts"
+import LargeBlogPostPreview from "../components/common/blog-posts/large-blog-post-preview"
 import { SidePanel } from "../components/layout/side-panel/side-panel"
+import SmallBlogPostPreview from "../components/common/blog-posts/small-blog-post-preview"
 
 const IndexPage: React.FC<any> = () => {
   const homeCmsContent = useCmsContentQuery().homePage.nodes[0].childDataJson
-  const ontent = useCmsContentQuery().homePage.nodes[0].childDataJson
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -52,7 +53,33 @@ const IndexPageContent: React.FC<any> = ({ homeContent }) => {
 
       <div css={{ display: "flex", justifyContent: "center" }}>
         <div css={{ width: "75%" }}>
-          <BlogPost />
+          <div css={{ paddingBottom: "5rem" }}>
+            <LargeBlogPostPreview />
+          </div>
+          <div
+            css={{
+              display: "flex",
+              flexDirection: ["column", "row"],
+              paddingBottom: "5rem",
+            }}
+          >
+            <SmallBlogPostPreview />
+            <span css={{ paddingLeft: "1.5rem" }}>
+              <SmallBlogPostPreview />
+            </span>
+          </div>
+          <div
+            css={{
+              display: "flex",
+              flexDirection: ["column", "row"],
+              paddingBottom: "5rem",
+            }}
+          >
+            <SmallBlogPostPreview />
+            <span css={{ paddingLeft: "1.5rem" }}>
+              <SmallBlogPostPreview />
+            </span>
+          </div>
         </div>
         <div css={mq({ width: "25%", display: ["none", "initial"] })}>
           <SidePanel />

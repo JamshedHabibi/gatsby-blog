@@ -1,12 +1,12 @@
 import React from "react"
-import { BlogButton } from "./buttons"
-import { colors } from "../../styling/colors"
-import mq from "../../styling/media-queries"
-import { fonts } from "../../styling/fonts"
+import { BlogButton } from "../buttons"
+import { colors } from "../../../styling/colors"
+import mq from "../../../styling/media-queries"
+import { fonts } from "../../../styling/fonts"
 
-const BlogPost: React.FC<any> = ({}) => {
+const LargeBlogPostPreview: React.FC<any> = ({}) => {
   return (
-    <div css={mq({ display: "flex", flexDirection: ["column"] })}>
+    <div css={{ display: "flex", flexDirection: "column", width: "100%" }}>
       <img
         css={mq({
           height: ["20rem", "27rem"],
@@ -68,4 +68,4 @@ const BlogPost: React.FC<any> = ({}) => {
   )
 }
 
-export default BlogPost
+export default LargeBlogPostPreview
