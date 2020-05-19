@@ -20,7 +20,6 @@ export const PortraitCategoryCard: React.FC<PortraitCategoryCardProps> = ({
         mq({
           margin: "1rem .5rem",
           width: ["70%", "33.333%"],
-          border: "1px solid green",
           backgroundImage: `url(${image.imagePath})`,
           height: ["23rem", "28rem"],
           backgroundSize: "cover",

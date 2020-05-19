@@ -68,7 +68,7 @@ collections:
     extension: json
     format: json
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { name: title, label: Title, widget: string }
       - {
@@ -82,13 +82,13 @@ collections:
       - { name: body, label: Body, widget: markdown }
 
     # STYLE
-  - name: style
-    label: Style Blog
-    folder: data/blog/style
+  - name: lifestyle
+    label: Lifestyle Blog
+    folder: data/blog/lifestyle
     extension: json
     format: json
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { name: title, label: Title, widget: string }
       - {
@@ -107,7 +107,7 @@ collections:
     extension: json
     format: json
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { name: title, label: Title, widget: string }
       - {

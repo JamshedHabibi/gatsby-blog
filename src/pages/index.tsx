@@ -57,26 +57,36 @@ const IndexPageContent: React.FC<any> = ({ homeContent }) => {
             <LargeBlogPostPreview />
           </div>
           <div
-            css={{
+            css={mq({
               display: "flex",
               flexDirection: ["column", "row"],
-              paddingBottom: "5rem",
-            }}
+              paddingBottom: "2.5rem",
+            })}
           >
             <SmallBlogPostPreview />
-            <span css={{ paddingLeft: "1.5rem" }}>
+            <span
+              css={mq({
+                paddingLeft: ["0", "1.5rem"],
+                paddingTop: ["2.5rem", "0"],
+              })}
+            >
               <SmallBlogPostPreview />
             </span>
           </div>
           <div
-            css={{
+            css={mq({
               display: "flex",
               flexDirection: ["column", "row"],
-              paddingBottom: "5rem",
-            }}
+              paddingBottom: "2.5rem",
+            })}
           >
             <SmallBlogPostPreview />
-            <span css={{ paddingLeft: "1.5rem" }}>
+            <span
+              css={mq({
+                paddingLeft: ["0", "1.5rem"],
+                paddingTop: ["2.5rem", "0"],
+              })}
+            >
               <SmallBlogPostPreview />
             </span>
           </div>
