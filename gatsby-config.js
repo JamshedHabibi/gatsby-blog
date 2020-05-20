@@ -31,6 +31,17 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-json-remark`,
+      options: {
+        paths: [
+          `${__dirname}/data/blog/travel`,
+          `${__dirname}/data/blog/bookish`,
+          `${__dirname}/data/blog/lifestyle`,
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

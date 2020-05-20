@@ -98,6 +98,7 @@ collections:
           timeFormat: HH:mm,
           widget: datetime,
         }
+      - { name: image, label: Image, widget: image }
       - { name: body, label: Body, widget: markdown }
 
     # BOOKISH
@@ -117,4 +118,5 @@ collections:
           timeFormat: HH:mm,
           widget: datetime,
         }
+      - { name: image, label: Image, widget: image }
       - { name: body, label: Body, widget: markdown }

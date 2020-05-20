@@ -10,7 +10,6 @@ import SmallBlogPostPreview from "../components/common/blog-posts/small-blog-pos
 
 const IndexPage: React.FC<any> = () => {
   const homeCmsContent = useCmsContentQuery().homePage.nodes[0].childDataJson
-
   return (
     <Layout>
       <SEO title="Home" />
