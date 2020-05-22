@@ -4,7 +4,19 @@ import { colors } from "../../../styling/colors"
 import mq from "../../../styling/media-queries"
 import { fonts } from "../../../styling/fonts"
 
-const LargeBlogPostPreview: React.FC<any> = ({}) => {
+export type blogPostProps = {
+  blogPost: {
+    date: string
+    body: string
+    postType: string
+    thumbnail: string
+    title: string
+    slug: string
+  }
+}
+
+const LargeBlogPostPreview: React.FC<blogPostProps> = ({ blogPost }) => {
+  const { date, body, postType, thumbnail, title, slug } = blogPost
   return (
     <div css={{ display: "flex", flexDirection: "column", width: "100%" }}>
       <img
@@ -13,7 +25,7 @@ const LargeBlogPostPreview: React.FC<any> = ({}) => {
           width: "100%",
           objectFit: "cover",
         })}
-        src="/images/travel.jpg"
+        src={thumbnail}
         alt=""
       />
       <div css={[fonts.mainPageText, { paddingTop: "1rem" }]}>
@@ -27,15 +39,13 @@ const LargeBlogPostPreview: React.FC<any> = ({}) => {
           }}
         >
           <BlogButton
-            urlPath={`/blog/travel`}
-            buttonText="Bookish"
+            urlPath={`/blog/${postType}`}
+            buttonText={postType.slice(0, 1).toUpperCase() + postType.slice(1)}
             textColor={colors.mainBlueText}
             hoverTextColor={colors.mainBlueText}
           />
         </div>
-        <div css={mq({ fontSize: ["1.6rem", "1.8rem"] })}>
-          the a-z bookish survey
-        </div>
+        <div css={mq({ fontSize: ["1.6rem", "1.8rem"] })}>{title}</div>
         <div
           css={[
             fonts.lora,
@@ -46,17 +56,14 @@ const LargeBlogPostPreview: React.FC<any> = ({}) => {
             },
           ]}
         >
-          April 21st, 2020 • 5 min read
+          {date}
         </div>
         <div css={{ fontSize: "0.8rem", paddingBottom: "1rem" }}>
-          {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed avelementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu. Nunc sit amet scelerisque mauris".slice(
-            0,
-            250
-          ) + "..."}
+          {body.slice(0, 250) + "..."}
         </div>
         <div css={{ fontSize: "0.8rem" }}>
           <BlogButton
-            urlPath=""
+            urlPath={slug}
             buttonText="Continue Reading →"
             textColor="black"
             hoverTextColor={colors.mainBlueText}

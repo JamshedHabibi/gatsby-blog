@@ -10,10 +10,15 @@ import SmallBlogPostPreview from "../components/common/blog-posts/small-blog-pos
 
 const IndexPage: React.FC<any> = () => {
   const homeCmsContent = useCmsContentQuery().homePage.nodes[0].childDataJson
+  const blogCmsContent = useCmsContentQuery().blogContentOrderedByDate.edges
+  console.log(blogCmsContent[0].node.context)
   return (
     <Layout>
       <SEO title="Home" />
-      <IndexPageContent homeContent={homeCmsContent} />
+      <IndexPageContent
+        homeContent={homeCmsContent}
+        blogContent={blogCmsContent}
+      />
     </Layout>
   )
 }
@@ -23,7 +28,7 @@ type CategoryCardProps = {
   image: { imagePath: string; alternativeText: string }
 }
 
-const IndexPageContent: React.FC<any> = ({ homeContent }) => {
+const IndexPageContent: React.FC<any> = ({ homeContent, blogContent }) => {
   return (
     <div
       css={{
@@ -52,42 +57,20 @@ const IndexPageContent: React.FC<any> = ({ homeContent }) => {
 
       <div css={{ display: "flex", justifyContent: "center" }}>
         <div css={{ width: "75%" }}>
-          <div css={{ paddingBottom: "5rem" }}>
-            <LargeBlogPostPreview />
+          {blogContent[0] ? (
+            <div css={{ paddingBottom: "5rem" }}>
+              <LargeBlogPostPreview blogPost={blogContent[0].node.context} />
+            </div>
+          ) : null}
+          <div css={{ display: "flex" }}>
+            {blogContent.slice(1, 3).map(post => (
+              <SmallBlogPostPreview blogPost={post.node.context} />
+            ))}
           </div>
-          <div
-            css={mq({
-              display: "flex",
-              flexDirection: ["column", "row"],
-              paddingBottom: "2.5rem",
-            })}
-          >
-            <SmallBlogPostPreview />
-            <span
-              css={mq({
-                paddingLeft: ["0", "1.5rem"],
-                paddingTop: ["2.5rem", "0"],
-              })}
-            >
-              <SmallBlogPostPreview />
-            </span>
-          </div>
-          <div
-            css={mq({
-              display: "flex",
-              flexDirection: ["column", "row"],
-              paddingBottom: "2.5rem",
-            })}
-          >
-            <SmallBlogPostPreview />
-            <span
-              css={mq({
-                paddingLeft: ["0", "1.5rem"],
-                paddingTop: ["2.5rem", "0"],
-              })}
-            >
-              <SmallBlogPostPreview />
-            </span>
+          <div css={{ display: "flex" }}>
+            {blogContent.slice(3, 5).map(post => (
+              <SmallBlogPostPreview blogPost={post.node.context} />
+            ))}
           </div>
         </div>
         <div css={mq({ width: "25%", display: ["none", "initial"] })}>

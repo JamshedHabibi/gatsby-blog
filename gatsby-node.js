@@ -20,6 +20,10 @@ exports.createPages = async ({ graphql, actions }) => {
       allBookishJson {
         edges {
           node {
+            title
+            image
+            body
+            date(formatString: "DD MMM YYYY")
             fields {
               slug
             }
@@ -29,6 +33,10 @@ exports.createPages = async ({ graphql, actions }) => {
       allLifestyleJson {
         edges {
           node {
+            title
+            image
+            body
+            date(formatString: "DD MMM YYYY")
             fields {
               slug
             }
@@ -38,6 +46,10 @@ exports.createPages = async ({ graphql, actions }) => {
       allTravelJson {
         edges {
           node {
+            title
+            image
+            body
+            date(formatString: "DD MMM YYYY")
             fields {
               slug
             }
@@ -53,6 +65,12 @@ exports.createPages = async ({ graphql, actions }) => {
         `./src/components/common/blog-posts/blog-post.tsx`
       ),
       context: {
+        blog: true,
+        postType: "bookish",
+        title: node.title,
+        thumbnail: node.image,
+        body: node.body,
+        date: node.date,
         slug: node.fields.slug,
       },
     })
@@ -64,6 +82,12 @@ exports.createPages = async ({ graphql, actions }) => {
         `./src/components/common/blog-posts/blog-post.tsx`
       ),
       context: {
+        blog: true,
+        postType: "travel",
+        title: node.title,
+        thumbnail: node.image,
+        body: node.body,
+        date: node.date,
         slug: node.fields.slug,
       },
     })
@@ -75,6 +99,12 @@ exports.createPages = async ({ graphql, actions }) => {
         `./src/components/common/blog-posts/blog-post.tsx`
       ),
       context: {
+        blog: true,
+        postType: "lifestyle",
+        title: node.title,
+        thumbnail: node.image,
+        body: node.body,
+        date: node.date,
         slug: node.fields.slug,
       },
     })

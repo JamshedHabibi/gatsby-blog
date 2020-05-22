@@ -4,6 +4,24 @@ import { useStaticQuery, graphql } from "gatsby"
 export const useCmsContentQuery = () => {
   const cmsContent = useStaticQuery(graphql`
     query CmsContentQuery {
+      blogContentOrderedByDate: allSitePage(
+        filter: { context: { blog: { eq: true } } }
+        sort: { order: DESC, fields: context___date }
+      ) {
+        edges {
+          node {
+            context {
+              date
+              postType
+              title
+              thumbnail
+              body
+              slug
+            }
+          }
+        }
+      }
+
       instagramContent: allInstaNode {
         nodes {
           caption
