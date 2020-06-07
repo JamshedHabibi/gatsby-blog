@@ -35,13 +35,13 @@ const Layout = ({ children }: LayoutProps) => {
         </main>
       </div>
       <div css={mq({ overflowX: "hidden" })}>
-        {/* <InstagramFeed
+        <InstagramFeed
           instagramLink={cmsContent.socialMedia.nodes[0].childDataJson.socialMedia.find(
             (media: { link: { name: string; url: string } }) =>
               media.link.name.toLowerCase() === "instagram"
           )}
-          instagramContent={cmsContent.allInstaNode.nodes}
-          />*/}
+          instagramContent={cmsContent.instagramContent.nodes}
+        />
       </div>
       <Footer copyrightName={cmsContent.header.nodes[0].childDataJson.title} />
     </>
