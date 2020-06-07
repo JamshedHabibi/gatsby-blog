@@ -40,7 +40,7 @@ const Layout = ({ children }: LayoutProps) => {
             (media: { link: { name: string; url: string } }) =>
               media.link.name.toLowerCase() === "instagram"
           )}
-          instagramContent={cmsContent.instagramContent.nodes}
+          instagramContent={cmsContent.allInstaNode.nodes}
         />
       </div>
       <Footer copyrightName={cmsContent.header.nodes[0].childDataJson.title} />

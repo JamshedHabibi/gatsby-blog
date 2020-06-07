@@ -22,7 +22,7 @@ export const useCmsContentQuery = () => {
         }
       }
 
-      instagramContent: allInstaNode {
+      allInstaNode {
         nodes {
           caption
           id
