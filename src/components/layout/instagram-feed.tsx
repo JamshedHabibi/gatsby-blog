@@ -24,6 +24,7 @@ export const InstagramFeed: React.FC<InstagramFeedProps> = ({
     {instagramContent.reverse().map((post: InstagramContentProps) => {
       return (
         <div
+          key={post.id}
           css={{
             textDecoration: "none",
             color: "white",
