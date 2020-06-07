@@ -22,21 +22,6 @@ export const useCmsContentQuery = () => {
         }
       }
 
-      allInstaNode {
-        nodes {
-          caption
-          id
-          original
-          likes
-          comments
-          thumbnails {
-            config_height
-            config_width
-            src
-          }
-        }
-      }
-
       header: allFile(filter: { base: { eq: "header.json" } }) {
         nodes {
           childDataJson {
