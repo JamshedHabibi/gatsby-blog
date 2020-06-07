@@ -5,7 +5,7 @@ import getFontAwesomeIcons from "../../styling/font-awesome"
 import { Footer } from "./footer"
 import Header from "./header"
 import { useCmsContentQuery } from "../cms/cms-content-query"
-import { InstagramFeed } from "../layout/instagram-feed"
+import InstagramFeed from "./InstagramFeed"
 import mq from "../../styling/media-queries"
 import { flex, zIndex } from "../../styling/constants"
 
@@ -36,11 +36,9 @@ const Layout = ({ children }: LayoutProps) => {
       </div>
       <div css={mq({ overflowX: "hidden" })}>
         <InstagramFeed
-          instagramLink={cmsContent.socialMedia.nodes[0].childDataJson.socialMedia.find(
-            (media: { link: { name: string; url: string } }) =>
-              media.link.name.toLowerCase() === "instagram"
-          )}
-          instagramContent={cmsContent.instagramContent.nodes}
+          userId="2119123388"
+          thumbnailWidth={240}
+          photoCount={12}
         />
       </div>
       <Footer copyrightName={cmsContent.header.nodes[0].childDataJson.title} />
