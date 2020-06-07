@@ -5,6 +5,7 @@ export type InstagramContentProps = {
   comments: number
   original: string
   thumbnails: ThumbnailProps[]
+  reverse: any
 }
 
 type ThumbnailProps = {
