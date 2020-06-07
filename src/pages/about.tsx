@@ -2,12 +2,20 @@ import React from "react"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import { fonts } from "../styling/fonts"
+import { SidePanel } from "../components/layout/side-panel/side-panel"
 
 const AboutPage: React.FC<any> = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <AboutPageContent />
+      <div css={{ display: "flex" }}>
+        <div css={{ width: "75%" }}>
+          <AboutPageContent />
+        </div>
+        <div css={{ width: "25%" }}>
+          <SidePanel />
+        </div>
+      </div>
     </Layout>
   )
 }

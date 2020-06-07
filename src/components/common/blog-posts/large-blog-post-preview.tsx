@@ -15,6 +15,15 @@ export type blogPostProps = {
   }
 }
 
+export type blogPostPropsContent = {
+  date: string
+  body: string
+  postType: string
+  thumbnail: string
+  title: string
+  slug: string
+}
+
 const LargeBlogPostPreview: React.FC<blogPostProps> = ({ blogPost }) => {
   const { date, body, postType, thumbnail, title, slug } = blogPost
   return (
@@ -26,25 +35,29 @@ const LargeBlogPostPreview: React.FC<blogPostProps> = ({ blogPost }) => {
           objectFit: "cover",
         })}
         src={thumbnail}
-        alt=""
+        alt={title}
       />
       <div css={[fonts.mainPageText, { paddingTop: "1rem" }]}>
-        <div
-          css={{
-            color: colors.mainBlueText,
-            fontSize: "0.9rem",
-            "&:hover": {
-              color: colors.mainBabyBlue,
-            },
-          }}
-        >
-          <BlogButton
-            urlPath={`/blog/${postType}`}
-            buttonText={postType.slice(0, 1).toUpperCase() + postType.slice(1)}
-            textColor={colors.mainBlueText}
-            hoverTextColor={colors.mainBlueText}
-          />
-        </div>
+        {postType ? (
+          <div
+            css={{
+              color: colors.mainBlueText,
+              fontSize: "0.9rem",
+              "&:hover": {
+                color: colors.mainBabyBlue,
+              },
+            }}
+          >
+            <BlogButton
+              urlPath={`/blog/${postType}`}
+              buttonText={
+                postType.slice(0, 1).toUpperCase() + postType.slice(1)
+              }
+              textColor={colors.mainBlueText}
+              hoverTextColor={colors.mainBlueText}
+            />
+          </div>
+        ) : null}
         <div css={mq({ fontSize: ["1.6rem", "1.8rem"] })}>{title}</div>
         <div
           css={[

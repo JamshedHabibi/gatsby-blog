@@ -4,14 +4,16 @@ import SEO from "../components/seo"
 import { useCmsContentQuery } from "../components/cms/cms-content-query"
 import { PortraitCategoryCard } from "../components/portrait-category-card"
 import mq from "../styling/media-queries"
-import LargeBlogPostPreview from "../components/common/blog-posts/large-blog-post-preview"
+import LargeBlogPostPreview, {
+  blogPostProps,
+  blogPostPropsContent,
+} from "../components/common/blog-posts/large-blog-post-preview"
 import { SidePanel } from "../components/layout/side-panel/side-panel"
 import SmallBlogPostPreview from "../components/common/blog-posts/small-blog-post-preview"
 
 const IndexPage: React.FC<any> = () => {
   const homeCmsContent = useCmsContentQuery().homePage.nodes[0].childDataJson
   const blogCmsContent = useCmsContentQuery().blogContentOrderedByDate.edges
-  console.log(blogCmsContent[0].node.context)
   return (
     <Layout>
       <SEO title="Home" />

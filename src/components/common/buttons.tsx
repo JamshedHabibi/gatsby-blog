@@ -54,9 +54,6 @@ export const BlogButton: React.FC<ButtonProps> = ({
   <div css={{ border: "1px solid rgb(0,0,0,0)" }}>
     <Link
       to={urlPath}
-      className={`blog-post-button ${
-        continueReadingBtn ? "continueReadingBtn" : "linkToCategory"
-      }`}
       css={[
         continueReadingBtn ? fonts.lora : fonts.mainPageText,
         {

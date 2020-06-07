@@ -16,7 +16,7 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => {
   getFontAwesomeIcons()
   let cmsContent = useCmsContentQuery()
-  console.log(cmsContent.socialMedia.nodes[0].childDataJson.socialMedia)
+  console.log(cmsContent)
   return (
     <>
       <Navbar />
