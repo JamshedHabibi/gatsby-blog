@@ -1,8 +1,7 @@
 backend:
-  name: git-gateway #proxy
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
   branch: master
-  #proxy_url: http://localhost:8081/api/v1
-  #branch: master
 
 media_folder: static/images
 public_folder: /images
@@ -60,6 +59,18 @@ collections:
                       label: Alternate text,
                       widget: string,
                     }
+      # About Page
+      - name: "about"
+        label: "About Page"
+        file: "data/about.json"
+        fields:
+          - name: "image"
+            label: "Selfie Image"
+            widget: object
+            fields:
+              - { name: imagePath, label: Image, widget: image }
+              - { name: alternateText, label: Alternate text, widget: string }
+          - { name: "description", label: "Description", widget: markdown }
 
   # Blog Post Sections
   # TRAVEL

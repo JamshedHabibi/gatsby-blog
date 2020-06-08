@@ -56,6 +56,18 @@ export const useCmsContentQuery = () => {
           }
         }
       }
+
+      aboutPage: allFile(filter: { base: { eq: "about.json" } }) {
+        nodes {
+          childDataJson {
+            image {
+              alternateText
+              imagePath
+            }
+            description
+          }
+        }
+      }
     }
   `)
   return cmsContent

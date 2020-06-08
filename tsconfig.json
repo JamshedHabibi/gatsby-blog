@@ -14,5 +14,5 @@
     },
     "types": ["node", "@emotion/core", "@types/jest"]
   },
-  "include": ["./src/**/*", "./build/**/*", "./test/**/*/", "./shared/**/*"]
+  "include": ["./src/**/*", "./build/**/*", "./test/**/*/", "./shared/**/*", "static/about.tsx"]
 }

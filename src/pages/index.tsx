@@ -66,7 +66,7 @@ const IndexPageContent: React.FC<any> = ({ homeContent, blogContent }) => {
               <LargeBlogPostPreview blogPost={blogContent[0].node.context} />
             </div>
           ) : null}
-          <div css={{ display: "flex" }}>
+          <div css={mq({ display: "flex", flexDirection: ["column", "row"] })}>
             {blogContent.slice(1, 3).map(post => (
               <SmallBlogPostPreview
                 blogPost={post.node.context}
@@ -74,7 +74,7 @@ const IndexPageContent: React.FC<any> = ({ homeContent, blogContent }) => {
               />
             ))}
           </div>
-          <div css={{ display: "flex" }}>
+          <div css={mq({ display: "flex", flexDirection: ["column", "row"] })}>
             {blogContent.slice(3, 5).map(post => (
               <SmallBlogPostPreview
                 blogPost={post.node.context}
