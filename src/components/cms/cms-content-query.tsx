@@ -30,6 +30,21 @@ export const useCmsContentQuery = () => {
         }
       }
 
+      sidePanel: allFile(filter: { base: { eq: "side-panel.json" } }) {
+        nodes {
+          childDataJson {
+            id
+            aboutMeSummary {
+              summary
+              image {
+                alternateText
+                imagePath
+              }
+            }
+          }
+        }
+      }
+
       socialMedia: allFile(filter: { base: { eq: "social-media.json" } }) {
         nodes {
           childDataJson {

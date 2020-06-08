@@ -7,6 +7,7 @@ import {
   faSearch,
   faHeart,
   faComment,
+  faChevronUp,
 } from "@fortawesome/free-solid-svg-icons"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 
@@ -19,6 +20,7 @@ export default function getFontAwesomeIcons() {
     faTimes,
     faSearch,
     faHeart,
-    faComment
+    faComment,
+    faChevronUp
   )
 }

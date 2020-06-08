@@ -5,14 +5,7 @@ import mq from "../../../styling/media-queries"
 import { fonts } from "../../../styling/fonts"
 
 export type blogPostProps = {
-  blogPost: {
-    date: string
-    body: string
-    postType: string
-    thumbnail: string
-    title: string
-    slug: string
-  }
+  blogPost: blogPostPropsContent
 }
 
 export type blogPostPropsContent = {

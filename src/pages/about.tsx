@@ -27,7 +27,6 @@ const AboutPage: React.FC<any> = () => {
 
 const AboutPageContent: React.FC<any> = () => {
   let aboutPageContent = useCmsContentQuery().aboutPage.nodes[0].childDataJson
-  console.log(aboutPageContent)
   return (
     <div
       css={{

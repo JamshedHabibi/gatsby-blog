@@ -3,6 +3,8 @@ import Layout from "../../components/layout/layout"
 import { useCmsContentQuery } from "../../components/cms/cms-content-query"
 import LargeBlogPostPreview from "../../components/common/blog-posts/large-blog-post-preview"
 import { SidePanel } from "../../components/layout/side-panel/side-panel"
+import mq from "../../styling/media-queries"
+import { blogPostPropsContent } from "../../components/common/blog-posts/large-blog-post-preview"
 
 const bookishPage: React.FC<any> = ({}) => {
   return (
@@ -11,7 +13,7 @@ const bookishPage: React.FC<any> = ({}) => {
         <div css={{ width: "75%" }}>
           <BookishPageContent />
         </div>
-        <div css={{ width: "25%" }}>
+        <div css={mq({ width: "25%", display: ["none", "initial"] })}>
           <SidePanel />
         </div>
       </div>
@@ -24,9 +26,19 @@ const BookishPageContent: React.FC<any> = () => {
   return (
     <div>
       {blogPosts
-        .filter(blog => blog.node.context.postType === "bookish")
-        .map(blog => (
-          <div css={{ paddingBottom: "3rem" }}>
+        .filter(
+          (blog: { node: { context: blogPostPropsContent } }) =>
+            blog.node.context.postType === "bookish"
+        )
+        .map((blog: { node: { context: blogPostPropsContent } }) => (
+          <div
+            css={{
+              paddingBottom: "3rem",
+              display: "flex",
+              justifyContent: "center",
+              width: "80%",
+            }}
+          >
             <LargeBlogPostPreview blogPost={blog.node.context} />
           </div>
         ))}

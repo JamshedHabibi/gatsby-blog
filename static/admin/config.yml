@@ -19,6 +19,28 @@ collections:
         file: "data/header.json"
         fields:
           - { name: title, label: Title, widget: string }
+
+      # Side Panel
+      - name: "sidePanel"
+        label: "Side Panel"
+        file: "data/side-panel.json"
+        fields:
+          - name: "aboutMeSummary"
+            label: "About Me Summary"
+            widget: object
+            fields:
+              - name: image
+                label: Image
+                widget: object
+                fields:
+                  - { name: imagePath, label: Image Path, widget: image }
+                  - {
+                      name: alternateText,
+                      label: Alternate Text,
+                      widget: string,
+                    }
+              - { name: summary, label: Summary, widget: string }
+
       # Social Media Links
       - name: "socialMedia"
         label: "Social Media"

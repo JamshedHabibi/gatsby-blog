@@ -5,12 +5,10 @@ import { useCmsContentQuery } from "../components/cms/cms-content-query"
 import { PortraitCategoryCard } from "../components/portrait-category-card"
 import mq from "../styling/media-queries"
 import LargeBlogPostPreview, {
-  blogPostProps,
   blogPostPropsContent,
 } from "../components/common/blog-posts/large-blog-post-preview"
 import { SidePanel } from "../components/layout/side-panel/side-panel"
 import SmallBlogPostPreview from "../components/common/blog-posts/small-blog-post-preview"
-import BlogPost from "src/components/common/blog-posts/blog-post"
 
 const IndexPage: React.FC<any> = () => {
   const homeCmsContent = useCmsContentQuery().homePage.nodes[0].childDataJson
@@ -67,20 +65,24 @@ const IndexPageContent: React.FC<any> = ({ homeContent, blogContent }) => {
             </div>
           ) : null}
           <div css={mq({ display: "flex", flexDirection: ["column", "row"] })}>
-            {blogContent.slice(1, 3).map(post => (
-              <SmallBlogPostPreview
-                blogPost={post.node.context}
-                key={post.node.context.body}
-              />
-            ))}
+            {blogContent
+              .slice(1, 3)
+              .map((post: { node: { context: blogPostPropsContent } }) => (
+                <SmallBlogPostPreview
+                  blogPost={post.node.context}
+                  key={post.node.context.body}
+                />
+              ))}
           </div>
           <div css={mq({ display: "flex", flexDirection: ["column", "row"] })}>
-            {blogContent.slice(3, 5).map(post => (
-              <SmallBlogPostPreview
-                blogPost={post.node.context}
-                key={post.node.context.body}
-              />
-            ))}
+            {blogContent
+              .slice(3, 5)
+              .map((post: { node: { context: blogPostPropsContent } }) => (
+                <SmallBlogPostPreview
+                  blogPost={post.node.context}
+                  key={post.node.context.body}
+                />
+              ))}
           </div>
         </div>
         <div css={mq({ width: "25%", display: ["none", "initial"] })}>
