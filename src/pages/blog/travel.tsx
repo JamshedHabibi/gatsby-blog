@@ -23,7 +23,6 @@ const travelPage: React.FC<any> = ({}) => {
 
 const TravelPageContent: React.FC<any> = () => {
   const blogPosts = useCmsContentQuery().blogContentOrderedByDate.edges
-  console.log(blogPosts)
   return (
     <div
       css={{
@@ -43,8 +42,9 @@ const TravelPageContent: React.FC<any> = () => {
             css={{
               paddingBottom: "3rem",
               display: "flex",
+              flexDirection: "column",
               justifyContent: "center",
-              width: "80%",
+              width: "90%",
             }}
           >
             <LargeBlogPostPreview blogPost={blog.node.context} />

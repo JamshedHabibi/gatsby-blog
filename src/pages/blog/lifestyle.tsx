@@ -10,7 +10,7 @@ const lifestylePage: React.FC<any> = ({}) => {
   return (
     <Layout>
       <div css={{ display: "flex" }}>
-        <div css={{ width: "75%" }}>
+        <div>
           <LifestylePageContent />
         </div>
         <div css={mq({ width: "25%", display: ["none", "initial"] })}>
@@ -24,7 +24,14 @@ const lifestylePage: React.FC<any> = ({}) => {
 const LifestylePageContent: React.FC<any> = () => {
   const blogPosts = useCmsContentQuery().blogContentOrderedByDate.edges
   return (
-    <div>
+    <div
+      css={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       {blogPosts
         .filter(
           (blog: { node: { context: blogPostPropsContent } }) =>
@@ -35,8 +42,9 @@ const LifestylePageContent: React.FC<any> = () => {
             css={{
               paddingBottom: "3rem",
               display: "flex",
+              flexDirection: "column",
               justifyContent: "center",
-              width: "80%",
+              width: "90%",
             }}
           >
             <LargeBlogPostPreview blogPost={blog.node.context} />
