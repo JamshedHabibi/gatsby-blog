@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import { SidePanel } from "../../layout/side-panel/side-panel"
 import { fonts } from "../../../styling/fonts"
 import { Remarkable } from "remarkable"
+import mq from "../../../styling/media-queries"
 
 const md = new Remarkable()
 
@@ -12,26 +13,36 @@ export default function BlogPost({ data }: any) {
   return (
     <Layout>
       <div css={[fonts.mainPageText, { display: "flex" }]}>
-        <div css={{ width: "75%" }}>
+        <div
+          css={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
           <img
             src={post.image}
             alt="thumbnail"
-            css={{ width: "100%", height: "33rem", objectFit: "cover" }}
+            css={{ width: "80%", height: "33rem", objectFit: "cover" }}
           />
-          <h1>{post.title}</h1>
-          <div>{post.date}</div>
-          <div
-            css={{
-              img: {
-                width: "100%",
-                objectFit: "cover",
-                height: "40rem",
-              },
-            }}
-            dangerouslySetInnerHTML={{ __html: md.render(post.body) }}
-          />
+          <div css={{ width: "80%" }}>
+            <h1>{post.title}</h1>
+            <div>{post.date}</div>
+            <div
+              css={{
+                img: {
+                  width: "100%",
+                  objectFit: "cover",
+                  height: "40rem",
+                },
+              }}
+              dangerouslySetInnerHTML={{ __html: md.render(post.body) }}
+            />
+          </div>
         </div>
-        <div css={{ width: "25%" }}>
+        <div css={mq({ width: "25%", display: ["none", "initial"] })}>
           <SidePanel />
         </div>
       </div>

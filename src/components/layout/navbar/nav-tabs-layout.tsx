@@ -40,7 +40,7 @@ export const NavTabLayout: React.FC<any> = () => {
         css={mq({
           display: "flex",
           justifyContent: "space-around",
-          width: ["80%", "40%"],
+          width: ["100%", "40%"],
         })}
       >
         <NavTab path="/" displayText="Home" />
