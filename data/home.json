@@ -1,22 +1,23 @@
 {
-  "categoryCard": [{
+  "categoryCard": [
+    {
       "categoryTitle": "Travel",
       "image": {
-        "imagePath": "/images/travel.jpg",
+        "imagePath": "/images/33126192_unknown-2.jpg",
         "alternateText": "Travel"
       }
     },
     {
       "categoryTitle": "Lifestyle",
       "image": {
-        "imagePath": "/images/fashion.jpg",
+        "imagePath": "/images/8c786ff8-1c31-42de-8e19-9a155417621d.jpg",
         "alternateText": "Lifestyle"
       }
     },
     {
       "categoryTitle": "Bookish",
       "image": {
-        "imagePath": "/images/bookish.jpg",
+        "imagePath": "/images/147ba315-06dc-4f38-8dc1-3602d7b0a9bf.jpg",
         "alternateText": "Bookish"
       }
     }
