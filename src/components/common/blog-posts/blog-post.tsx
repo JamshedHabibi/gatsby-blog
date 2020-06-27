@@ -35,7 +35,6 @@ export default function BlogPost({ data }: any) {
                 img: {
                   width: "100%",
                   objectFit: "cover",
-                  height: "40rem",
                 },
               }}
               dangerouslySetInnerHTML={{ __html: md.render(post.body) }}

@@ -74,12 +74,26 @@ class NavDropdownTab extends Component<NavTabProps, { showArrowUp: boolean }> {
   }
 
   activateDropdownMenu = () => {
-    this.setState({ showArrowUp: !this.state.showArrowUp }, () => {
-      if (this.state.showArrowUp === true) {
+    this.setState({ showArrowUp: true }, () => {
+      if (window.innerWidth > 992) {
         document.getElementById(
           `${this.props.displayText}-dropdown`
         ).style.top = "8vh"
-      } else {
+      } else if (window.innerWidth < 992) {
+        document.getElementById(
+          `${this.props.displayText}-dropdown`
+        ).style.top = "8vh"
+      }
+    })
+  }
+
+  deactivateDropdownMenu = () => {
+    this.setState({ showArrowUp: false }, () => {
+      if (window.innerWidth > 992) {
+        document.getElementById(
+          `${this.props.displayText}-dropdown`
+        ).style.top = "-20vh"
+      } else if (window.innerWidth < 992) {
         document.getElementById(
           `${this.props.displayText}-dropdown`
         ).style.top = "-30vh"
@@ -101,9 +115,13 @@ class NavDropdownTab extends Component<NavTabProps, { showArrowUp: boolean }> {
               justifyContent: "center",
             },
           ]}
-          onClick={() => this.activateDropdownMenu()}
+          onClick={
+            this.state.showArrowUp === false
+              ? () => this.activateDropdownMenu()
+              : () => this.deactivateDropdownMenu()
+          }
         >
-          {this.props.displayText.toUpperCase()}
+          {displayText.toUpperCase()}
           <FontAwesomeIcon
             css={{
               fontSize: "0.6rem",
@@ -115,23 +133,26 @@ class NavDropdownTab extends Component<NavTabProps, { showArrowUp: boolean }> {
           <div
             id={`${displayText}-dropdown`}
             css={[
-              {
+              mq({
                 position: "absolute",
-                top: "-30vh",
+                top: ["8vh", "-30vh"],
                 transition: "all 0.2s ease-in-out",
                 zIndex: 1,
-              },
+              }),
             ]}
           >
             {displayText === "categories" ? (
               <div
-                css={{
+                css={mq({
                   display: "flex",
                   background: colors.mainBabyBlue,
                   padding: ".5rem",
-                  width: "25rem",
+                  width: ["100vw", "25rem"],
                   justifyContent: "space-around",
-                }}
+                  borderTop: `1px solid ${colors.footerDivider}`,
+                  left: ["-5vw", 0],
+                  position: "relative",
+                })}
               >
                 <NavTab displayText="Travel" path="/blog/travel" />
                 <NavTab displayText="Lifestyle" path="/blog/lifestyle" />
