@@ -73,97 +73,61 @@ class NavDropdownTab extends Component<NavTabProps, { showArrowUp: boolean }> {
     }
   }
 
-  activateDropdownMenu = () => {
-    this.setState({ showArrowUp: true }, () => {
-      if (window.innerWidth > 992) {
-        document.getElementById(
-          `${this.props.displayText}-dropdown`
-        ).style.top = "8vh"
-      } else if (window.innerWidth < 992) {
-        document.getElementById(
-          `${this.props.displayText}-dropdown`
-        ).style.top = "8vh"
-      }
-    })
-  }
-
-  deactivateDropdownMenu = () => {
-    this.setState({ showArrowUp: false }, () => {
-      if (window.innerWidth > 992) {
-        document.getElementById(
-          `${this.props.displayText}-dropdown`
-        ).style.top = "-20vh"
-      } else if (window.innerWidth < 992) {
-        document.getElementById(
-          `${this.props.displayText}-dropdown`
-        ).style.top = "-30vh"
-      }
-    })
-  }
-
   render() {
     const { displayText } = this.props
     return (
-      <>
+      <div
+        css={[
+          navTabStyle,
+          {
+            padding: ".5rem",
+            zIndex: 2,
+            display: "flex",
+            justifyContent: "center",
+          },
+        ]}
+        onClick={() => this.setState({ showArrowUp: !this.state.showArrowUp })}
+      >
+        {displayText.toUpperCase()}
+        <FontAwesomeIcon
+          css={{
+            fontSize: "0.6rem",
+            paddingLeft: ".4rem",
+            paddingTop: ".4rem",
+          }}
+          icon={`${this.state.showArrowUp ? "chevron-up" : "chevron-down"}`}
+        />
         <div
-          css={[
-            navTabStyle,
-            {
-              padding: ".5rem",
-              zIndex: 2,
-              display: "flex",
-              justifyContent: "center",
-            },
-          ]}
-          onClick={
-            this.state.showArrowUp === false
-              ? () => this.activateDropdownMenu()
-              : () => this.deactivateDropdownMenu()
-          }
+          id={`${displayText}-dropdown`}
+          css={{
+            position: "absolute",
+            top: `${this.state.showArrowUp ? "8vh" : "-20vh"}`,
+            transition: "all 0.2s ease-in-out",
+            zIndex: 1,
+          }}
         >
-          {displayText.toUpperCase()}
-          <FontAwesomeIcon
-            css={{
-              fontSize: "0.6rem",
-              paddingLeft: ".4rem",
-              paddingTop: ".4rem",
-            }}
-            icon={`${this.state.showArrowUp ? "chevron-up" : "chevron-down"}`}
-          />
-          <div
-            id={`${displayText}-dropdown`}
-            css={[
-              mq({
-                position: "absolute",
-                top: ["8vh", "-30vh"],
-                transition: "all 0.2s ease-in-out",
-                zIndex: 1,
-              }),
-            ]}
-          >
-            {displayText === "categories" ? (
-              <div
-                css={mq({
-                  display: "flex",
-                  background: colors.mainBabyBlue,
-                  padding: ".5rem",
-                  width: ["100vw", "25rem"],
-                  justifyContent: "space-around",
-                  borderTop: `1px solid ${colors.footerDivider}`,
-                  left: ["-5vw", 0],
-                  position: "relative",
-                })}
-              >
-                <NavTab displayText="Travel" path="/blog/travel" />
-                <NavTab displayText="Lifestyle" path="/blog/lifestyle" />
-                <NavTab displayText="Bookish" path="/blog/bookish" />
-              </div>
-            ) : (
-              <div></div>
-            )}
-          </div>
+          {displayText === "categories" ? (
+            <div
+              css={mq({
+                display: "flex",
+                background: colors.mainBabyBlue,
+                padding: ".5rem",
+                width: ["100vw", "25rem"],
+                justifyContent: "space-around",
+                borderTop: `1px solid ${colors.footerDivider}`,
+                left: ["-7.5vw", 0],
+                position: "relative",
+              })}
+            >
+              <NavTab displayText="Travel" path="/blog/travel" />
+              <NavTab displayText="Lifestyle" path="/blog/lifestyle" />
+              <NavTab displayText="Bookish" path="/blog/bookish" />
+            </div>
+          ) : (
+            <div></div>
+          )}
         </div>
-      </>
+      </div>
     )
   }
 }

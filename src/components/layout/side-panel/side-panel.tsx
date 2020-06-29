@@ -5,7 +5,6 @@ import { useCmsContentQuery } from "../../../components/cms/cms-content-query"
 
 export const SidePanel = () => {
   const sidePanelContent = useCmsContentQuery().sidePanel.nodes[0].childDataJson
-  console.log(sidePanelContent)
   return (
     <div
       css={[
