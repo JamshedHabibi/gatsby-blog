@@ -84,7 +84,7 @@ export const Footer: React.FC<FooterProps> = ({ copyrightName }) => {
         >
           © {new Date().getFullYear()}
           {`. `}
-          CREATED BY JAMSHED HABIBI
+          CREATED BY HABIBI
         </div>
       </div>
     </footer>
