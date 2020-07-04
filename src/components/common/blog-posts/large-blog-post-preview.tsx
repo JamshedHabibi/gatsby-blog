@@ -19,13 +19,30 @@ export type blogPostPropsContent = {
 
 const LargeBlogPostPreview: React.FC<blogPostProps> = ({ blogPost }) => {
   const { date, body, postType, thumbnail, title, slug } = blogPost
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ]
+  const postMonth: number = parseInt(date.slice(5, 7))
+  const postDateFormatted =
+    date.slice(8, 10) + " " + monthNames[postMonth - 1] + " " + date.slice(0, 4)
   return (
     <div css={{ display: "flex", flexDirection: "column", width: "100%" }}>
       <img
         css={mq({
           height: ["20rem", "27rem"],
           width: "100%",
-          objectFit: "cover",
+          objectFit: "contain",
         })}
         src={thumbnail}
         alt={title}
@@ -62,7 +79,7 @@ const LargeBlogPostPreview: React.FC<blogPostProps> = ({ blogPost }) => {
             },
           ]}
         >
-          {date}
+          {postDateFormatted}
         </div>
         <div css={{ fontSize: "0.8rem", paddingBottom: "1rem" }}>
           {body.slice(0, 250) + "..."}

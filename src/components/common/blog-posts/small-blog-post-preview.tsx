@@ -7,6 +7,23 @@ import { blogPostProps } from "./large-blog-post-preview"
 
 const SmallBlogPostPreview: React.FC<blogPostProps> = ({ blogPost }) => {
   const { date, body, postType, thumbnail, title, slug } = blogPost
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ]
+  const postMonth: number = parseInt(date.slice(5, 7))
+  const postDateFormatted =
+    date.slice(8, 10) + " " + monthNames[postMonth - 1] + " " + date.slice(0, 4)
   return (
     <div
       css={{
@@ -56,7 +73,7 @@ const SmallBlogPostPreview: React.FC<blogPostProps> = ({ blogPost }) => {
               },
             ]}
           >
-            {date}
+            {postDateFormatted}
           </div>
           <div css={{ fontSize: "0.8rem", paddingBottom: "1rem" }}>
             {body.slice(0, 250) + "..."}

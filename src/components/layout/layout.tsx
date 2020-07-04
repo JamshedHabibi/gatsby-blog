@@ -30,7 +30,7 @@ const Layout = ({ children }: LayoutProps) => {
           }),
         ]}
       >
-        <main css={[zIndex.pageContent, mq({ width: ["80%", "70%"] })]}>
+        <main css={[zIndex.pageContent, mq({ width: ["80%", "75%"] })]}>
           {children}
         </main>
       </div>

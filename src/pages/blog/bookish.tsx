@@ -22,7 +22,7 @@ const bookishPage: React.FC<any> = ({}) => {
 }
 
 const BookishPageContent: React.FC<any> = () => {
-  const blogPosts = useCmsContentQuery().blogContentOrderedByDate.edges
+  const blogPosts = useCmsContentQuery().blogContentOrderedByDate.nodes
   return (
     <div
       css={{
@@ -34,10 +34,10 @@ const BookishPageContent: React.FC<any> = () => {
     >
       {blogPosts
         .filter(
-          (blog: { node: { context: blogPostPropsContent } }) =>
-            blog.node.context.postType === "bookish"
+          (blog: { context: blogPostPropsContent }) =>
+            blog.context.postType === "bookish"
         )
-        .map((blog: { node: { context: blogPostPropsContent } }) => (
+        .map((blog: { context: blogPostPropsContent }) => (
           <div
             css={{
               paddingBottom: "3rem",
@@ -47,7 +47,7 @@ const BookishPageContent: React.FC<any> = () => {
               width: "90%",
             }}
           >
-            <LargeBlogPostPreview blogPost={blog.node.context} />
+            <LargeBlogPostPreview blogPost={blog.context} />
           </div>
         ))}
     </div>

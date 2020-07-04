@@ -12,7 +12,7 @@ import SmallBlogPostPreview from "../components/common/blog-posts/small-blog-pos
 
 const IndexPage: React.FC<any> = () => {
   const homeCmsContent = useCmsContentQuery().homePage.nodes[0].childDataJson
-  const blogCmsContent = useCmsContentQuery().blogContentOrderedByDate.edges
+  const blogCmsContent = useCmsContentQuery().blogContentOrderedByDate.nodes
   return (
     <Layout>
       <SEO title="Home" />
@@ -30,6 +30,7 @@ type CategoryCardProps = {
 }
 
 const IndexPageContent: React.FC<any> = ({ homeContent, blogContent }) => {
+  console.log(blogContent)
   return (
     <div
       css={{
@@ -61,26 +62,26 @@ const IndexPageContent: React.FC<any> = ({ homeContent, blogContent }) => {
         <div css={{ width: "75%" }}>
           {blogContent[0] ? (
             <div css={{ paddingBottom: "5rem" }}>
-              <LargeBlogPostPreview blogPost={blogContent[0].node.context} />
+              <LargeBlogPostPreview blogPost={blogContent[0].context} />
             </div>
           ) : null}
           <div css={mq({ display: "flex", flexDirection: ["column", "row"] })}>
             {blogContent
               .slice(1, 3)
-              .map((post: { node: { context: blogPostPropsContent } }) => (
+              .map((post: { context: blogPostPropsContent }) => (
                 <SmallBlogPostPreview
-                  blogPost={post.node.context}
-                  key={post.node.context.body}
+                  blogPost={post.context}
+                  key={post.context.body}
                 />
               ))}
           </div>
           <div css={mq({ display: "flex", flexDirection: ["column", "row"] })}>
             {blogContent
               .slice(3, 5)
-              .map((post: { node: { context: blogPostPropsContent } }) => (
+              .map((post: { context: blogPostPropsContent }) => (
                 <SmallBlogPostPreview
-                  blogPost={post.node.context}
-                  key={post.node.context.body}
+                  blogPost={post.context}
+                  key={post.context.body}
                 />
               ))}
           </div>

@@ -22,7 +22,7 @@ const travelPage: React.FC<any> = ({}) => {
 }
 
 const TravelPageContent: React.FC<any> = () => {
-  const blogPosts = useCmsContentQuery().blogContentOrderedByDate.edges
+  const blogPosts = useCmsContentQuery().blogContentOrderedByDate.nodes
   return (
     <div
       css={{
@@ -34,10 +34,10 @@ const TravelPageContent: React.FC<any> = () => {
     >
       {blogPosts
         .filter(
-          (blog: { node: { context: blogPostPropsContent } }) =>
-            blog.node.context.postType === "travel"
+          (blog: { context: blogPostPropsContent }) =>
+            blog.context.postType === "travel"
         )
-        .map((blog: { node: { context: blogPostPropsContent } }) => (
+        .map((blog: { context: blogPostPropsContent }) => (
           <div
             css={{
               paddingBottom: "3rem",
@@ -47,7 +47,7 @@ const TravelPageContent: React.FC<any> = () => {
               width: "90%",
             }}
           >
-            <LargeBlogPostPreview blogPost={blog.node.context} />
+            <LargeBlogPostPreview blogPost={blog.context} />
           </div>
         ))}
     </div>

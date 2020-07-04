@@ -8,16 +8,14 @@ export const useCmsContentQuery = () => {
         filter: { context: { blog: { eq: true } } }
         sort: { order: DESC, fields: context___date }
       ) {
-        edges {
-          node {
-            context {
-              date
-              postType
-              title
-              thumbnail
-              body
-              slug
-            }
+        nodes {
+          context {
+            date
+            postType
+            title
+            thumbnail
+            body
+            slug
           }
         }
       }

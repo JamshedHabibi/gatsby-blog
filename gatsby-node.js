@@ -23,7 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             image
             body
-            date(formatString: "DD MMM YYYY")
+            date
             fields {
               slug
             }
@@ -36,7 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             image
             body
-            date(formatString: "DD MMM YYYY")
+            date
             fields {
               slug
             }
@@ -49,7 +49,7 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             image
             body
-            date(formatString: "DD MMM YYYY")
+            date
             fields {
               slug
             }
