@@ -42,11 +42,13 @@ export default function BlogPost({ data }: any) {
             <h1>{post.title}</h1>
             <div>{post.date}</div>
             <div
-              css={{
+              css={mq({
                 img: {
                   width: "100%",
+                  objectFit: "contain",
+                  height: ["20rem", "33rem"],
                 },
-              }}
+              })}
               dangerouslySetInnerHTML={{ __html: md.render(post.body) }}
             />
           </div>
