@@ -32,24 +32,28 @@ const LifestylePageContent: React.FC<any> = () => {
         alignItems: "center",
       }}
     >
-      {blogPosts
-        .filter(
-          (blog: { context: blogPostPropsContent }) =>
-            blog.context.postType === "lifestyle"
-        )
-        .map((blog: { context: blogPostPropsContent }) => (
-          <div
-            css={{
-              paddingBottom: "3rem",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              width: "90%",
-            }}
-          >
-            <LargeBlogPostPreview blogPost={blog.context} />
-          </div>
-        ))}
+      {blogPosts.length > 0 ? (
+        blogPosts
+          .filter(
+            (blog: { context: blogPostPropsContent }) =>
+              blog.context.postType === "lifestyle"
+          )
+          .map((blog: { context: blogPostPropsContent }) => (
+            <div
+              css={{
+                paddingBottom: "3rem",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                width: "90%",
+              }}
+            >
+              <LargeBlogPostPreview blogPost={blog.context} />
+            </div>
+          ))
+      ) : (
+        <div>No blog posts</div>
+      )}
     </div>
   )
 }
